@@ -1,0 +1,1345 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>computers</title>
+<style>
+@media(max-width:992px){
+.products{
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+}
+@media(max-width:600px){
+.header{
+height:65px;
+padding:0 12px;
+overflow: visible;
+}
+.header h1{
+font-size:22px;
+}
+.navbar{
+gap:12px;
+padding:0;
+overflow: visible;
+flex-wrap:nowrap;
+scrollbar-width:none;
+}
+.navbar::-webkit-scrollbar{
+display:none;
+}
+.navbar a{
+font-size:12px;
+white-space:nowrap;
+padding:0;
+}
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+width:96%;
+}
+.product-img{
+height:140px;
+}
+.product-title{
+font-size:12px;
+min-height:38px;
+}
+.rating{
+font-size:12px;
+}
+.new-price{
+font-size:17px;
+}
+.old-price{
+font-size:11px;
+}
+.product-card button{
+font-size:12px;
+padding:10px;
+margin:10px;
+width:calc(100% - 20px);
+}
+.hero{
+grid-template-columns:1fr;
+}
+.hero-right{
+grid-template-columns:1fr;
+}
+.hero-left{
+height:280px;
+}
+.box{
+width:95%;
+padding:20px;
+}
+}
+@media (max-width:768px){
+.hero{
+width:90%;
+margin:25px auto;
+}
+.hero-left{
+width:100%;
+height:300px;
+margin:0;
+}
+.hero-text{
+left:18px;
+top:18px;
+width:45%;
+}
+.hero-text h1{
+font-size:28px;
+line-height:1.1;
+}
+.hero-text p{
+font-size:12px;
+line-height:1.4;
+}
+.hero-text a{
+font-size:12px;
+padding:8px 14px;
+margin-left:0;
+}
+.hero-img{
+width:100%;
+height:100%;
+object-fit:cover;
+padding:0;
+margin:0;
+}
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background-color:white ;
+}
+
+h1{
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 45px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background-color: #1b314c;
+  border-bottom: 4px solid #354253;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+  box-sizing: border-box;
+   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo img {
+  max-height: 82px;
+  width: auto;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+.logo2 {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo2 img {
+  max-height: 142px;
+  width: auto;
+  object-fit: contain;
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.logo2 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    position: relative;
+    transition: color 0.3s ease, transform 0.25s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+    transform: translateY(-1px);
+}
+.navbar > a::after {
+    content: '';
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    bottom: -6px;
+    left: 0;
+
+    background-color: #ffd700;
+
+    transition: width 0.3s ease;
+}
+
+.navbar > a:hover::after {
+    width: 100%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-toggle {
+    display: none;
+}
+
+.dropdown-link {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+
+    position: relative;
+
+    padding: 10px 0;
+
+    display: inline-block;
+
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.dropdown-link:hover {
+    color: #ffd700;
+    transform: translateY(-1px);
+}
+
+
+.dropdown-content {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    min-width: 210px;
+
+    background-color: #2b3b4e;
+
+    border-radius: 8px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    z-index: 99999;
+
+    padding: 8px 0;
+}
+
+
+.dropdown-content a {
+    display: block;
+
+    padding: 14px 22px;
+
+    color: white;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.dropdown-content a:hover {
+    color: #ffd700;
+
+    background: transparent !important;
+
+    transform: translateX(6px);
+}
+
+
+@media (min-width: 601px) {
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        gap: 15px;
+        overflow: visible !important;
+    }
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+
+    .dropdown-toggle {
+        display: none;
+    }
+
+
+    .dropdown-link {
+        display: inline-block;
+
+        color: white;
+
+        font-size: 15px;
+
+        padding: 10px 0;
+
+        cursor: pointer;
+
+        white-space: nowrap;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .dropdown:hover .dropdown-content {
+        display: none !important;
+    }
+
+    .dropdown-toggle:checked ~ .dropdown-content {
+        display: block !important;
+    }
+
+    .dropdown-content {
+        position: absolute;
+
+        top: 100%;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        min-width: 200px;
+
+        width: max-content;
+
+        max-width: 90vw;
+
+        background-color: #213b57;
+
+        border-radius: 8px;
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.3);
+
+        z-index: 999999;
+
+        padding: 5px 0;
+    }
+
+
+    .dropdown-content a {
+        display: block;
+
+        color: white;
+
+        padding: 12px 20px;
+
+        font-size: 14px;
+
+        text-decoration: none;
+
+        white-space: nowrap;
+
+        transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+
+    .dropdown-content a:hover {
+        color: #ffd700;
+
+        background: transparent !important;
+
+        transform: translateX(5px);
+    }
+
+.logo img {
+        max-height: 70px;
+        padding: 5px 8px;
+    }
+
+    .logo {
+        margin-right: 15px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .navbar {
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    .dropdown-link {
+        font-size: 13px;
+    }
+
+    .dropdown-content {
+        min-width: 175px;
+    }
+
+    .dropdown-content a {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+}
+.marquee{
+width:100%;
+overflow:hidden;
+white-space:nowrap;
+background:#17375d;
+padding:15px 0;
+margin-top: -35px;
+}
+
+.track{
+    
+display:flex;
+width:max-content;
+animation:scroll 16s linear infinite;
+}
+
+.track span{
+font-size:15px;
+font-weight:700;
+color:#fff;
+white-space:nowrap;
+padding-right:40px;
+}
+
+@keyframes scroll{
+from{
+transform:translateX(0);
+}
+to{
+transform:translateX(-25%);
+}
+}
+
+.hero{
+width:40%;
+margin:50px auto;
+display:grid;
+grid-template-columns:2.3fr 1fr;
+gap:20px;
+}
+
+.hero-left{
+margin-top: 25px;
+margin-left: 22.5%;
+margin-right: 25px;
+position:relative;
+height:400px;
+border-radius:28px;
+overflow:hidden;
+background:linear-gradient(135deg,#eef4ff,#cddfff);
+width: 55%;
+}
+
+.hero-left{
+transition:.35s;
+}
+
+.hero-left:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(0,0,0,.15);
+}
+
+.hero-text{
+position:absolute;
+left:55px;
+top:60px;
+width:45%;
+z-index:5;
+}
+
+.tag{
+display:inline-block;
+padding:10px 22px;
+background:white;
+border-radius:30px;
+color:#17406d;
+font-size:15px;
+font-weight:600;
+margin-bottom:25px;
+}
+
+.hero-text h1{
+font-size:68px;
+line-height:1;
+color:#ffffff;
+margin-bottom:22px;
+text-shadow: 2px 2px 5px black;
+}
+
+.hero-text p{
+font-size:20px;
+color:#ffffff;
+line-height:1.7;
+margin-bottom:35px;
+font-weight: 600;
+text-shadow: 2px 2px 5px black;
+}
+
+.hero-text a{
+display:flex;
+padding:18px 30px;
+background:#17375d;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+font-weight:400;
+transition:.35s;
+margin-left: 55%;
+}
+
+.hero-text a:hover{
+background:#0f2742;
+transform:translateY(-3px);
+}
+
+.hero-img{
+position:absolute;
+right:0;
+bottom:0;
+margin-right:1%;
+width:98%;
+height:400px;
+padding:10px;
+transition:0.5s ease;
+border-radius: 35px;
+}
+
+.hero-left:hover .hero-img{
+transform:scale(1.05);
+}
+
+section{
+padding-top: 5%;
+}
+
+.products{
+width:min(1400px,95%);
+margin:40px auto;
+display:grid;
+grid-template-columns:repeat(4,minmax(220px,1fr));
+gap:22px;
+}
+
+.product-card{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+border:1px solid #ececec;
+transition:.35s;
+height:100%;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.product-img{
+width:100%;
+height:230px;
+background:#f7f8fb;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.product-img img{
+position:absolute;
+width:88%;
+height:88%;
+object-fit:contain;
+transition:.35s;
+}
+
+.product-img{
+position: relative;
+z-index: 1;
+}
+
+button{
+position: relative;
+z-index: 2;
+}
+
+.img1{
+opacity:1;
+}
+
+.img2{
+opacity:0;
+}
+
+.product-card:hover .img1{
+opacity:0;
+}
+
+.product-card:hover .img2{
+opacity:1;
+}
+
+.badge{
+position: absolute;
+top: 15px;
+left: 15px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+z-index: 10;
+}
+
+.product-title{
+font-size:15px;
+font-weight:600;
+line-height:1.45;
+margin:15px;
+display:-webkit-box;
+-webkit-box-orient:vertical;
+overflow:hidden;
+min-height:44px;
+}
+
+.rating{
+margin:0 15px;
+color:#ffb300;
+font-size:15px;
+}
+
+.price{
+display:flex;
+align-items:center;
+gap:10px;
+margin:15px;
+margin-top:auto;
+}
+
+.new-price{
+font-size:23px;
+font-weight:700;
+}
+
+.old-price{
+color:#999;
+text-decoration:line-through;
+}
+
+.product-card button{
+width:calc(100% - 30px);
+margin:15px;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#17375d;
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.product-card button:hover{
+background:#0e2743;
+}
+
+.product-card::before{
+content:'';
+position:absolute;
+inset:0;
+border-radius:18px;
+border:1px solid transparent;
+transition:.3s;
+}
+
+.product-card:hover::before{
+border-color:#d8d8d8;
+}
+
+.buy-btn{
+display:inline-block;
+padding:12px 30px;
+background:#17375d;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+text-align:center;
+}
+
+footer{
+background-color: #17375d;
+color: whitesmoke;
+text-align:center;
+padding:20px;
+width: 100%;
+height: 20%;
+margin-top: 15px;
+gap: 20px;
+}
+footer a{
+    color: white;
+    gap: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+footer h4{
+margin-top: 10px;
+}
+
+body {
+padding-top: 120px;
+}
+button{
+  padding: 10px;
+  border: black solid 4px;
+border-radius: 1000px;
+}
+
+@media (max-width: 992px) {
+.hero-left {
+width: 90% !important;
+margin-left: auto !important;
+margin-right: auto !important;
+height: 320px !important;
+}
+.hero-img {
+height: 320px !important;
+}
+.hero-text h1 {
+font-size: 36px !important;
+}
+.hero-text a {
+margin-left: 0 !important;
+}
+}
+
+@media (max-width: 992px) {
+.hero-left {
+width: 90% !important;
+margin-left: auto !important;
+margin-right: auto !important;
+height: 320px !important;
+}
+.hero-img {
+height: 320px !important;
+}
+.hero-text h1 {
+font-size: 36px !important;
+}
+.hero-text a {
+margin-left: 0 !important;
+}
+}
+
+@media (max-width: 600px) {
+body {
+padding-top: 65px !important;
+}
+
+.marquee {
+margin-top: 11% !important;
+}
+
+.hero-left {
+width: 94% !important;
+margin: 15px auto !important;
+height: 240px !important;
+}
+
+.hero-text {
+left: 16px !important;
+top: 16px !important;
+width: 55% !important;
+}
+.header h1{
+font-size:22px;
+}
+
+.header h1{
+font-size:22px;
+}
+
+
+.hero-text h1 {
+font-size: 24px !important;
+margin-bottom: 8px !important;
+}
+
+.hero-text p {
+font-size: 13px !important;
+line-height: 1.4 !important;
+margin-bottom: 12px !important;
+}
+
+.hero-text a {
+font-size: 13px !important;
+padding: 10px 18px !important;
+margin-left: 0 !important;
+display: inline-block !important;
+}
+
+.hero-img {
+width: 100% !important;
+height: 100% !important;
+object-fit: cover !important;
+padding: 0 !important;
+margin: 0 !important;
+border-radius: 28px !important;
+}
+
+.products {
+grid-template-columns: repeat(2, 1fr) !important;
+}
+
+
+}
+
+@media (max-width: 400px) {
+.products {
+grid-template-columns: repeat(2, 1fr) !important;
+gap: 10px !important;
+}
+.header h1 {
+font-size: 18px !important;
+}
+}
+</style>
+</head>
+<body>
+
+<section class="header">
+  <div class="logo">
+    <img src="C:\Users\iza\Desktop\web\hh.html\imgs\WhatsApp Image 2026-08-08 at 3.31.04 AM.jpeg" alt="HH Logo">
+  
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="index.html#about">About Us</a>
+    <div class="dropdown">
+
+    <input
+        type="checkbox"
+        id="dropdown-toggle"
+        class="dropdown-toggle">
+
+    <label
+        for="dropdown-toggle"
+        class="dropdown-link">
+        Services ▾
+    </label>
+
+    <div class="dropdown-content">
+      <a href="digital.html">Mobiles & Tablets</a>
+        <a href="repair.html">Repairing</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="console.html">Game Consoles</a>
+    </div>
+</div>
+<a href="index.html#contact">Contact</a>
+  </nav>
+</section>
+
+<section>
+  <div class="marquee">
+   <div class="track">
+      <span>PREMIUM ACCESSORIES • CHARGERS • FAST CHARGING • POWER BANKS • HEADPHONES • EARBUDS • SMARTWATCHES • PHONE CASES • SCREEN PROTECTORS • USB CABLES • CAR CHARGERS • WIRELESS CHARGERS • LAPTOP BAGS • KEYBOARDS • MICE • PREMIUM ACCESSORIES • </span>
+      <span>PREMIUM ACCESSORIES • CHARGERS • FAST CHARGING • POWER BANKS • HEADPHONES • EARBUDS • SMARTWATCHES • PHONE CASES • SCREEN PROTECTORS • USB CABLES • CAR CHARGERS • WIRELESS CHARGERS • LAPTOP BAGS • KEYBOARDS • MICE • PREMIUM ACCESSORIES • </span>
+      <span>PREMIUM ACCESSORIES • CHARGERS • FAST CHARGING • POWER BANKS • HEADPHONES • EARBUDS • SMARTWATCHES • PHONE CASES • SCREEN PROTECTORS • USB CABLES • CAR CHARGERS • WIRELESS CHARGERS • LAPTOP BAGS • KEYBOARDS • MICE • PREMIUM ACCESSORIES • </span>
+      <span>PREMIUM ACCESSORIES • CHARGERS • FAST CHARGING • POWER BANKS • HEADPHONES • EARBUDS • SMARTWATCHES • PHONE CASES • SCREEN PROTECTORS • USB CABLES • CAR CHARGERS • WIRELESS CHARGERS • LAPTOP BAGS • KEYBOARDS • MICE • PREMIUM ACCESSORIES • </span>
+    </div>
+  </div>
+</section>
+
+<div class="hero-left">
+  <div class="hero-text">
+    <h1>ADD-ONS</h1>
+    <p>Complete your tech experience with premium add-ons.</p>
+    <a href="#buy">Buy Now</a>
+  </div>
+  <img src="https://img.magnific.com/premium-photo/variety-modern-electronic-devices-are-spread-out-wooden-table_14117-735943.jpg" class="hero-img">
+</div>
+
+<section id="buy">
+  <h1 align="center" style="margin-top: 40px;" id="pro">ACCESSORIES</h1>
+</section>
+
+<div class="products">
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwm_dIq6lEA_zJ2pEDLEtUff50I-qB1XfBMejHH4hGUg&s=10" class="img1" alt="Laptop">
+        <img src="https://img.drz.lazcdn.com/static/pk/p/e2c79dd815bf8a025b6d48c818822846.jpg_720x720q80.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">JBL Flip 6: IP67 waterproof, 30W Bluetooth 5.1 speaker with 12-hour playtime, PartyBoost, and JBL App EQ customization.
+        </h3> <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€129.95 </span>
+      </div>
+    </div>
+
+ <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReiEbdX3nc-crGh8FaliEe0Rm29hKIYRbptW-IEmlx0w&s" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdYaN6InpP9qAKGkoezVizrRWDQYSkhqY_Mn41KOP1ow&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Intenso Memory Drive: 1TB portable USB 3.2 external HDD with up to 85MB/s read and 75MB/s write speeds, USB-powered, with a carrying case.</h3> 
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> between €65 and €95 </span>
+      </div>
+    </div>
+
+ <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/709701290_1340357151529967_9040041415501824498_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s206x206&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=rZcsPIiyOe4Q7kNvwGXxiar&_nc_oc=Adphygp4T7hGnkQu5dC6VraO2RihE0fa9Sgp2x5u2UPaTHpH8qy_qllm5tQ21Cs4G5Q&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=Lt3ikEf22JgXHj-MbbfzMw&_nc_ss=7b2a8&oh=00_AQHAQLdkWoseZBBkugATRedMFcigEwL4-FHWSeOU0nwC0g&oe=6A83A393" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4RAvAKGyyunzptJLwB8i1O_VzPv1TTAYZL7G25HcXA&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Galaxy Watch4: Wear OS smartwatch with advanced health tracking, ECG, sleep monitoring, body composition analysis, and Android connectivity.</h3> 
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">start €145</span>
+      </div>
+    </div>
+
+      <div class="product-card">
+      <div class="product-img">
+        <img src="data:image/jpeg;base64,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" class="img1" alt="Laptop">
+        <img src="https://m.media-amazon.com/images/I/61n-SOVBalL._AC_SX569_.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Kingston DataTraveler Max 1TB: USB-C 3.2 Gen 2 flash drive with up to 1,000MB/s read and 900MB/s write speeds in a compact design.</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">between €95 and €130 </span>
+      </div>
+    </div>
+     
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://goldreef.com.pk/wp-content/uploads/2025/08/p_sc610_1000gb.png" class="img1" alt="Laptop">
+        <img src="https://pc4me.com.ph/cdn/shop/files/AdataSC6101TB.png?v=1710231639" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This portable solid-state drive utilizes a high-speed USB 3.2 Gen 2 Type-A interface to deliver sequential read speeds up to 550 MB/s and write speeds up to 500 MB/s.
+
+      </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €40 and €55</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/708911262_1339341788298170_3138676677930622491_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dCan4jBTHggQ7kNvwEEvXmt&_nc_oc=Adps4wFMavshLdWLrnc6Tlx9geL7fJUSj_2Xqy2djSXfKd4QvV_VRK7L2aD1I5-tAws&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=GYfhz8bjGyLrCGpDWJWexA&_nc_ss=7b2a8&oh=00_AQHDtidvvYWmFveTe2NkTq5KLaenfLtfuH_p2-dhfvZyDg&oe=6A849180" class="img1" alt="Laptop">
+        <img src="https://static.webx.pk/files/87161/Images/czone.com.pk-12-1540-19443-311025061705-87161-2509443-231225073656.webp" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This premium smartwatch introduces a sleek, slimmed-down cushion case profile with a Dynamic Lug System for a lightweight, flush wrist fit. Driven by an advanced 3nm processor
+
+      </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €350 to €390 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://typeshop.pk/wp-content/uploads/2023/03/airpods-2.jpg" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/641550647_1264608459104837_6224316210319285409_n.jpg?stp=dst-jpg_tt6&cstp=mx1278x1440&ctp=s1278x1440&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yF1SsGaIe0MQ7kNvwG2VqDE&_nc_oc=AdoKMvSBjO3Y4aUqKcQfVtODL_o8-p3BJNlsij9gtwZsWEshYDv6XPQvHRyLKzITBTI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=QrgSyLxhuUbQ0qHJMEfqjg&_nc_ss=7b2a8&oh=00_AQHbSl9dixzVOR92qz-_V6BBijB0AkQk0-TBg7XOi9vegg&oe=6A84B534" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Powered by the H2 chip, these wireless earbuds offer up to two times more Active Noise Cancellation (ANC) and an adaptive transparency mode</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €240 to €280 EUR </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQOXRvCzD1zB4ymXJRZO8cdH4_CtsbtX16a2xWRaYDroCSGjHRh" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/631100111_1251760717056278_500367558742533408_n.jpg?stp=dst-jpg_tt6&cstp=mx810x1014&ctp=s810x1014&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ydVFh_HUeQkQ7kNvwE56cmP&_nc_oc=AdqgT4Lj0xsRkM9EWNrxUWjXYG1cXuRgddr2QFvyDPe7YU-pR6RVhHQKXc19sV7XFRc&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=2Qx4cvz_ngSbcz3_NetErg&_nc_ss=7b2a8&oh=00_AQGJVtbDl3iYDy2djGCmlrwL3Nn7wDxQCff10tgw2ziPYQ&oe=6A8497C0" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This protective case pairs a frosted, translucent matte-finished backplate with an integrated magnetic charging ring that supports MagSafe-compatible wireless chargers and accessories</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €12 to €18</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/pk/sm-l705fzwaxfa/gallery/pk-galaxy-watch-ultra-l705-sm-l705fzwaxfa-544768643?$1164_776_PNG$" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/627240349_1247399487492401_7586622360592040156_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1167&ctp=s1170x1167&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=x3GsYWpQqcAQ7kNvwG_F8aS&_nc_oc=Adrlu8ZPpqE9nObhOtIsAxWEqH2lZB7Q86Ws0lqk6_Ev60CBM_-xf_jOJbXHhSONf2Y&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=LXr2dvWoN6T7ypkeCHLrlw&_nc_ss=7b2a8&oh=00_AQFWeqQ4JfRl_i7wnPxemA5TsnO2Q_bTZz4uttpOEPcU4w&oe=6A84A50E" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This rugged, premium outdoor smartwatch features a durable aerospace-grade titanium cushion-shaped case paired with a scratch-resistant sapphire crystal display.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€630 to €699 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.snoonu.com/product/2024-5/d49fd342-90a0-458f-ae88-a3763a91045e_Chargerforiphoneandotherlightningportdevices20wHocoC91B.jpg" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/615824814_1234368338795516_5693872744332562931_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1167&ctp=s1170x1167&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WIqFfb5JHRwQ7kNvwEIcD8e&_nc_oc=AdoOVCekVl95-KyoCuPwLDe74z82xYomD8cSFQt2rk1-ClBFgQ8cKqT_yABFoUsGYdo&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=yk42HIfnF0qSkEVNrUSXCg&_nc_ss=7b2a8&oh=00_AQFOsyb9grAXbjtosrEGojxInVG5ijNNqwrNdHzKMeePnA&oe=6A8489FA" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Constructed from flame-retardant PC and ABS safety materials, this compact 3-pin UK plug wall adapter features a single high-performance Type-C output that delivers up to 20W Power Delivery (PD) fast charging</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">  €8 to €15 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/561773368_1163406179225066_4256873431404213814_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PTZ1Faz7s1AQ7kNvwG_uA-1&_nc_oc=AdqzDzu55m8r1kqkuR0iWC_pJGwi0cCYOHSUFKEzSizINQY1BJtF7j2mIVvhGHr5MNM&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=bb9bWpsGvamShoqFHuicfw&_nc_ss=7b2a8&oh=00_AQH7pv20SQQPasBewleRqH545iuc4rx4js3J5DhtUL1nZg&oe=6A84AFFA" class="img1" alt="Laptop">
+        <img src="https://www.tejar.pk/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/f/i/fitbit_charge_6_fitness_tracker5_-_tejar.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">These premium wearables track heart rate, sleep quality, and stress responses while incorporating built-in GPS for workout tracking.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €80 to €110</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQP_uczT0L1Y94R70D51u1S2RltApagObwnj3qT_Nh1qwzngggw" class="img1" alt="Laptop">
+        <img src="https://m.media-amazon.com/images/I/61dixcnv3mL._AC_UF1000,1000_QL80_.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This highly compact, plug-and-play mobile broadband router lets you insert a SIM card from any operator to establish cellular internet speeds up to 150 Mbps.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €35 to €50 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://camerahouse.pk/cdn/shop/files/GoPro_Hero_13_Black_Price_in_Pakistan_grande.jpg?v=1734169584" class="img1" alt="Laptop">
+        <img src="https://megadron.pl/data/include/cms/blog/GoPro-porownanie/Porownanie_Kamer_GoPro.webp" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This camera lineup spans from the entry-level ultra-lightweight HERO 4K featuring basic touchscreen operations down to 5 meters underwater, up to the pro-tier HERO12 and HERO13 flagship models which deliver up to 5.3K60 resolution videos</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €270 to €330 </span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/526788534_1101315775434107_3393678738104914823_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=KiiwjzzDGqAQ7kNvwHhby6j&_nc_oc=AdoTOa5sgwNnPnOmi3rhnpSNQsLauKBjsoYcPSjtF7UMANIo8QmMNE_atVPuwSQrWO4&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=OIcnxCRs7ZTtr-1RPXknsQ&_nc_ss=7b2a8&oh=00_AQEpz7rFa2k716rqvvqDDk5H5PcEWp1Bc-d0qHVt_XUW4g&oe=6A848C71" class="img1" alt="Laptop">
+        <img src="https://itstar.ie/cdn/shop/files/TC06UG.jpg?v=1749728347&width=533" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Built with Gallium Nitride (GaN) technology for high thermal efficiency in a compact size, this universal charger outputs a powerful maximum total of 120W across three USB-C Power Delivery ports and one USB-A por</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €35 to €50 </span>
+      </div>
+    </div>
+    
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://shop.honeycombworkshop.com/cdn/shop/products/CH-BREATHABLE-003.jpg?v=1661213085&width=1445" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcShJ3ZSzgZFbgYv3sI-FGEDXMr50HRnJdydSlHrHSQl9vMUlfS5" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">These aluminum-cased iOS smartwatches offer crisp, high-brightness LTPO OLED displays featuring comprehensive, multi-sensor fitness analytics alongside deep wellness metrics like heart rhythm notifications and sleep tracking
+
+      </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €240 to €290</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRuZdKVYZ3crpQgRsmMUQEIbtVUbAeEBhgGwPgTESkQupeqdL1n" class="img1" alt="Laptop">
+        <img src="https://m.media-amazon.com/images/I/41qgpAMLxxL.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This pocket-sized mobile router accepts any cellular SIM card to deliver download speeds up to 150 Mbps, broadcasting a standard 2.4 GHz Wi-Fi signal to connect up to 10 devices simultaneously.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €40 to €55 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/532416679_1111776597721358_1493302940492606327_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wLI16cUB8fYQ7kNvwGxCYfS&_nc_oc=AdoryPvsJeYbyvkxqzFdBQlPoAe-JXXm2Uof0XOgoWxotMo8wsVmxtkxU1TRyCmlFZ8&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=WqtBfNmlN4aVN9BQDK3NoA&_nc_ss=7b2a8&oh=00_AQF2h-dQRhkuazaL98WW5zWOE9rXlKY-jgPykCRUZlckPQ&oe=6A84B000" class="img1" alt="Laptop">
+        <img src="https://images.priceoye.pk/samsung-ep-t2510-25w-3-pin-power-adapter-pakistan-priceoye-sny9j-500x500.webp" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This original wall adapter features a 3-pin UK layout configuration utilizing Power Delivery 3.0 PPS technology to offer 25W Super Fast Charging for compatible smartphones.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€18 to €28 </span>
+      </div>
+    </div>
+      <div class="product-card">
+      <div class="product-img">
+        <img src="https://discountstore.pk/cdn/shop/files/c1cef399-dece-47cf-9f09-84997f33bc50.webp?v=1740394162" class="img1" alt="Laptop">
+        <img src="https://down-sg.img.susercontent.com/file/my-11134207-7rasd-m195wfz7wnsh3e" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Weighing a mere 135 grams, this ultra-lightweight pocket drone supports controller-free operation with effortless 3-second palm takeoffs and landings.
+
+      </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €180 to €210
+
+        </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/517506507_1084614543770897_1358853856498719774_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1200&ctp=s1200x1200&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=gMCLBbY3DlQQ7kNvwFOHClW&_nc_oc=AdrGTUdMwjxBJCtHb9GzSXDfNMJ8FCYsiNirgWeNwZz9exxUJlpHcTCmuHqzrgNi4_Y&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=il-9Z-DPuKN-99V8dyFM5g&_nc_ss=7b2a8&oh=00_AQEJCNJ_8OBDWNpr2i0Zip05fYFU4nTQagj7MOwB69PzhQ&oe=6A849145" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/517377437_1084615360437482_6533572990056180435_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1200&ctp=s1200x1200&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=noANsi-dyaoQ7kNvwFK5RSC&_nc_oc=AdpHp6nwKPgs_diGB2Djsjv5dHA6cQY-9Mwgx0XzFaIqFstO-SnSM227ycm-q0sTifs&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=gtkKTKlG_omWmD0rP6bjPg&_nc_ss=7b2a8&oh=00_AQGEwjmPSqLasT-5yv4Xi2y0kY8qOLM-HG0OpC1cv_q26w&oe=6A84A767" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This hybrid protective case utilizes a frosted translucent back panel integrated with strong MagSafe-compatible magnets for secure wireless charging and accessory attachment.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> €12 to €18</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://hocotech.com/wp-content/uploads/2021/11/hoco-selected-s19-heartful-enc-noise-cancelling-bt-headset-packages.jpg" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQvuUlzMWUTpdQwueg-6ic2UO2jlK2B-UlGhBu1hvvahmtXPrq" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This single-ear business headset is engineered with a dual-microphone setup featuring Double-Mark Environmental Noise Cancellation (ENC) to isolate background noise for crystal-clear hands-free telephone communication</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€15 to €25 </span>
+      </div>
+    
+
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/517243622_1084122043820147_4154878499427363226_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9o-uvgN9N9AQ7kNvwExTD1u&_nc_oc=AdrJmojTbamOjOgQUXvtZD-L0DqW9gExweI3p6tixY6bNLpPN0C_sBQQ5mMWohkApmo&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=H-vV8jQys41wquW6DBNjBQ&_nc_ss=7b2a8&oh=00_AQGs8IsSf_3ymnvx4WC6SpjYvCnyzNltfr7xkPhDDG1QoQ&oe=6A84ADE5" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYlZXURB09tiuzqpX_cRpRPNVzupLr_BdJ5N0KP48OTWBIL4DA" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Equipped with dynamic Power Delivery 3.0 PPS smart assignment, this high-performance triple-port wall charger concurrently channels up to 65W from its main USB-C port</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€40 to €55</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/504430241_1077284684503883_1658525214860426105_n.jpg?stp=dst-jpg_tt6&cstp=mx1153x2048&ctp=s1153x2048&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9hlgtcgXyqoQ7kNvwGR59s4&_nc_oc=Adqf27MF-ARdmMMfDOWhNAZV3aVpdGMVN5OvJTHO9z4m2BN6LNFJAGbJUJ3hzHQXPgI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=Sev4YYH9EcJbIYFioGGwaQ&_nc_ss=7b2a8&oh=00_AQE7TVORG0ucJVw46x9lE8bdSMuNr4qw0SwF0EMGokdyKg&oe=6A84C1B5" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmcg8U3qliylhN1Aol4lAYItrmXIIoChTMQ0rsznZxwC3TF4ru" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This ultra-thin magnetic pad features a built-in LED circular display that tracks output power in real time. Operating on a integrated 1-meter Type-C cable</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€11 to €19</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/514101895_1077281547837530_7495783616546654534_n.jpg?stp=dst-jpg_tt6&cstp=mx1153x2048&ctp=s1153x2048&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SvnpfcB_E5sQ7kNvwEWUpHf&_nc_oc=Adp3b3U-iPFU3aeQ7Kwb2aAPSu61rhZh6d4EkLWdWHn88IKVOkJ9Fbd_NV0pCe9ITNc&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=61J_VifDubAVPxq8zwkx1g&_nc_ss=7b2a8&oh=00_AQGap7hhrGWWuxWCNJogxUGiGq9k2pUUGsxfD4cXL1kZsw&oe=6A849E03" class="img1" alt="Laptop">
+        <img src="https://images.priceoye.pk/samsung-galaxy-fit-3-1-year-brand-warranty-pakistan-priceoye-g4ein-500x500.webp" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This lightweight fitness tracker features a sleek aluminum body with a 1.6-inch AMOLED display that delivers up to 13 days of battery life on a single charge</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€45 and €65</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/506126171_1063135899252095_4324545558660099499_n.jpg?stp=dst-jpg_tt6&cstp=mx800x800&ctp=s800x800&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=nr6tladGiO0Q7kNvwGu1pRx&_nc_oc=AdqZVlCjyGHv-Giv6133FXLHIxh6MXQDsSVhdnW7S09ySRY51UNOv536L0bIbSNE3Qc&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=HjrPOm2O4fPxVyMN3g1hVg&_nc_ss=7b2a8&oh=00_AQF-qt6uWOMUO_1lje5OY-5__lmc9jmoX2slt3NB2GLusw&oe=6A84BDF7" class="img1" alt="Laptop">
+        <img src="https://www.hocotech.ae/cdn/shop/files/5_5ce6a266-2a00-47bd-b2e5-a63f53c84c36.jpg?v=1727598753&width=1445" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">this portable outdoor speaker features an 8-inch massive woofer unit outputting 10W of power alongside an independent, vibrant RGB spiral light system built directly into the front grille</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€25 to €40 </span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/497330083_1042600244638994_9131773494867963526_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=j5NtGIrj3tMQ7kNvwFuFul9&_nc_oc=Adr2x2uBBse3ZUZy79FDtZwHQkL9jsmMFp1DScL23Ok8mAYfOq-IjEdSnEvOpqHJVrc&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=YDn60WMlPokzGhYDWJ0pkA&_nc_ss=7b2a8&oh=00_AQFGwL4o4VW3VAWhNdBlPmBFrqjOaFWipwHW2uB219W2_Q&oe=6A84A1A4" class="img1" alt="Laptop">
+        <img src="https://techarc.pk/wp-content/uploads/2026/01/jbl-tune-520bt-bluetooth-headphones-purple-5-techarc.pk_.webp" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">These lightweight, foldable on-ear headphones harness advanced Bluetooth 5.3 technology to deliver renowned JBL Pure Bass Sound across multi-point device connections</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€35 to €50</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/506634432_1063135359252149_8537702731530410319_n.jpg?stp=dst-jpg_tt6&cstp=mx800x800&ctp=s800x800&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=I4kVW4VdXmQQ7kNvwGEAzl8&_nc_oc=AdqG2ScP5DdNA72uAtCfNJWOS-_TkDT_KeE5skwA0hCU1HTJk-z_384yl2UlpI6oO_k&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=W_aTWEYEdm0yDx4fNrP88g&_nc_ss=7b2a8&oh=00_AQHPaDZmmhwu45gMhLW8oacN2vE0wdbhyd_Eh9lKxbsNlQ&oe=6A849526" class="img1" alt="Laptop">
+        <img src="https://hocotech.com/wp-content/uploads/2022/09/hoco-bs52-billowing-outdoor-bt-speaker.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This large outdoor party speaker features dual 6.5-inch drivers outputting a combined 20W of audio power, accented by a full-panel, multi-mode LED flashing light matrix that synchronizes with the rhythm</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€45 to €60</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/488657512_1010913201141032_2515652436181759052_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=x3oKF_PLCeQQ7kNvwFjCepZ&_nc_oc=AdoNSNAe9APyySzjGSLpYcBp9RkanlIFLA18edakm6IOwc7z80JiaVNB6XZprdzVrSo&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=5j-luRfg_UICcd79SifVqQ&_nc_ss=7b2a8&oh=00_AQHUp8yhzjdxpVuBGXMJaOMPAePx7WJSxE7xtdagItU0tg&oe=6A84B860" class="img1" alt="Laptop">
+        <img src="https://i.ebayimg.com/images/g/iXMAAOSwRZ9hT80W/s-l400.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">These lightweight wireless neckband earphones feature custom 8.6mm dynamic drivers engineered to deliver premium JBL Signature Sound.</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€35 to €48</span>
+      </div>
+    </div>
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/487100783_1006339301598422_1877319595134265924_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6MOAC4qA4OcQ7kNvwEZ5F4S&_nc_oc=Adq6-pDsT6jaNvGM2la3d3Az6Ibz4ra419m-qqFYyjjtjww6s-dzI9Pf_1OZN7Rme4Y&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=SxRIh55ACnf5rNi90dWIPw&_nc_ss=7b2a8&oh=00_AQHufKkKToAa3PyTnk7vp5ic4A9AfEcMTim25uw4onKg2Q&oe=6A84AD0A" class="img1" alt="Laptop">
+        <img src="https://cdn.t-nb.com/image/upload/VISUEL_HD/INLEDRING/03303170100400_C1N0_s01.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This compact, portable desktop vlogging setup features an adjustable ring light with a broad color temperature range of 3000K to 5800K and 10 dimming levels to customize your studio lighting layout</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€12 to €22</span>
+      </div>
+    </div>
+     
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/485958100_1002785495287136_4406426173033240499_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=LCH7jmLttSoQ7kNvwGRflwW&_nc_oc=Adp2OWBYzGwY-9jS6obCITvc4yNuToxA3rtyNk0AylvSCOdECad9_uGYrtpKDEL_3QQ&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=xn-urdJ6NkNoRz_tVmRH1Q&_nc_ss=7b2a8&oh=00_AQEHD4GWUCssrvf5rLrmT6HoV0mIkVk_XSyveOYLrNShBQ&oe=6A849358" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/481121743_992324642999888_2630411540280644593_n.jpg?stp=c0.119.1440.1440a_dst-jpg_tt6&cstp=mx1440x1440&ctp=s206x206&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=714c7a&_nc_ohc=QmresS-nQpIQ7kNvwGqLpk8&_nc_oc=AdpztPAPLodls92I1dgK58MR37dxm-uZLeyT051YCBeVDPSw6fZgp7CVj4EjPNt7OkU&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=yUbyEjs1BuvDYxJpYaU5JA&_nc_ss=7b2a8&oh=00_AQGd-ZrEfoSW4D2smF4LKELecZttwGfKZb183jB9WYd3Yw&oe=6A84A8EE" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This inventory display showcases a massive variety of protective shells spanning from crystal-clear silicone bumpers to rugged anti-burst armor, frosted matte finishes</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€5 to €25</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482210485_993703629528656_8733870888874747097_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s960x960&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vGAZ7r4i_yUQ7kNvwEtL277&_nc_oc=Adqmcuz9IOk4lIk-RT1hN5oHiDEklLnlVWYincMCLP5qWCDpROiZiG3o98LDSsszl40&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=oAWvhnrr0LqJjdUwp8rf_w&_nc_ss=7b2a8&oh=00_AQFWT_VhdWzr9lkU4JEqprcNMV6if6md_HaI-9CMWzIIBQ&oe=6A84AF1F" class="img1" alt="Laptop">
+        <img src="https://astralite.store/cdn/shop/files/gsh2.webp?v=1706885370&width=1445" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">This multi-functional "G-shaped" bedside accessory integrates a 5W mono Bluetooth speaker with a 10W fast wireless charging pad located right on top of its center bridge</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€15 to €35</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482303876_993523662879986_314062849297586077_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1140&ctp=s1080x1140&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=m9Y1tbravZ4Q7kNvwEyEyL4&_nc_oc=AdqRPZNuriWTO2A1Mwn4A2v-v7kV934Zv15k9qCYr9-A8PxNoCwbb6VpwfPlWoTgsXY&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=cvJvii_tKIKb5sTokzWlYg&_nc_ss=7b2a8&oh=00_AQEtjwvtRUNL4xAW2_HUL2YHbRy3I-pvx9tX30nsTDJ96Q&oe=6A84A0F6" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQrxgL-WbiLTB0bPPRml9qlzIabv5iL8mj9TnPQxnR8f1Rgm64V" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">These lightweight, folding wireless headphones deliver punchy JBL Pure Bass Sound powered by an efficient multi-point Bluetooth connection that switches seamlessly</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€35 to €50</span>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482324527_993523676213318_6719030392962343090_n.jpg?stp=dst-jpg_tt6&cstp=mx1102x1379&ctp=s1102x1379&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=i3HutIrIn_IQ7kNvwG7GfO4&_nc_oc=Adqy8d7dq6QwWcErUZezVVWv5EAXbBPgBjtUeFjt4O9AEdNDl-GWHjAps8HCF84fQ9g&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=y3X1sYuQZ6hTaDAUHYKEEg&_nc_ss=7b2a8&oh=00_AQGMKhoQEa_iIaoZiK_0xLwaxnw9SB3dgj3CqULgtZwseA&oe=6A84B937" class="img1" alt="Laptop">
+        <img src="https://appleshop.com.pk/wp-content/uploads/2022/10/apple-tv-4k.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Powered by the ultra-fast A15 Bionic chip, this compact home entertainment hub delivers cinema-grade streaming with native support for 4K Dolby Vision, HDR10+, and spatial audio through Dolby Atmos configuration setups</h3>
+       <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price">€145 to €170</span>
+      </div>
+    </div>
+</div>
+<footer>
+<h3><a href="index.html"><b><i>Return</b></i></h3>
+     
+<h4>
+    <a href="https://www.facebook.com/100066670844125" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+        facebook
+    </a>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="https://www.instagram.com/hh_phones" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        Instagram
+    </a>
+</h4>
+<h6 style="margin-top: 15px;">All rights to <b><i>HH Phones</i></b></h6>
+</div>
+</footer>
+</body>
+</html>
