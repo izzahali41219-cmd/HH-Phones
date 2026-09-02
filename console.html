@@ -150,49 +150,66 @@ font-size: 45px;
 }
 
 
-.logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -1px;
+    white-space: nowrap;
 }
 
-.logo img {
-  max-height: 82px;
-  width: auto;
-  object-fit: contain;
-  background-color: #ffffff;
-  padding: 8px 14px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.logo-text .hh {
+    color: #168cff;
+    text-shadow:
+        0 0 5px rgba(45, 141, 237, 0.8),
+        0 0 12px rgba(29, 68, 104, 0.5);
 }
 
-.logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+.logo-text .phones {
+    color: #ffffff;
+    margin-left: 5px;
+    text-shadow:
+        0 2px 4px #000,
+        0 0 8px rgba(255, 255, 255, 0.35);
 }
-.logo2 {
-  display: flex;
-  align-items: center;
-  height: 100%;
+@media (max-width: 992px) {
+
+    .logo-text {
+        font-size: 35px;
+        letter-spacing: -0.8px;
+    }
+
+    .logo-text .phones {
+        margin-left: 4px;
+    }
 }
 
-.logo2 img {
-  max-height: 142px;
-  width: auto;
-  object-fit: contain;
-  padding: 8px 14px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 30px;
+@media (max-width: 600px) {
+
+  .logo-text {
+        font-size: 28px;
+        letter-spacing: -0.6px;
+        margin-right: 10px;
+        margin-left: -35px;
+    }
+
+    .logo-text .phones {
+        margin-left: 3px;
+    }
 }
 
-.logo2 img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-}
+@media (max-width: 380px) {
 
+    .logo-text {
+        font-size: 22px;
+        letter-spacing: -0.5px;
+    }
+
+    .logo-text .phones {
+        margin-left: 2px;
+    }
+}
 .navbar {
     display: flex;
     align-items: center;
@@ -763,7 +780,10 @@ footer a{
     text-decoration: none;
 }
 footer h4{
-margin-top: 10px;
+margin-top: 20px;
+}
+footer h2{
+margin-top: 20px;
 }
 
 body {
@@ -888,10 +908,10 @@ font-size: 18px !important;
 <body>
 
 <section class="header">
-  <div class="logo">
-    <img src="https://i.pinimg.com/736x/58/01/d4/5801d49b2f94151611055c585d2e5e40.jpg" alt="HH Logo">
-  
-  </div>
+ <div class="logo-text">
+    <span class="hh">HH</span>
+    <span class="phones">Phones</span>
+</div>
 
   <nav class="navbar">
     <a href="index.html">Home</a>
@@ -948,78 +968,78 @@ font-size: 18px !important;
  <div class="product-card">
       <div class="product-img">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLY5hUV9mAjp5Vkv8H2je1oh0fejoD8mQzzhR3JBlHSx6kLUIv" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/637795134_1263079825924367_3470992667087606312_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x705&ctp=s1170x705&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=iQZp-3TyA0oQ7kNvwH_S5y5&_nc_oc=AdrPdl1GEc0sxkougvtazUl_CZfVGy2BtXIB1cKSSP-dPKcBDrK2rKF3_7hXuziYEfU&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=bkVLstLpTBXD_8GhAK0EYg&_nc_ss=7b2a8&oh=00_AQG6Va7X0DhGSQQV2mZ62ezBs2vYq0cQxWVk5tYSjU2wtw&oe=6A84E9F5" class="img2" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5-_eVmqgv8LiYTVI53JljwQUg1XD-UvUM464R5-tzw&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Sony PlayStation 5 Slim Digital Edition features a disc-free design with an ultra-fast 1TB SSD that delivers near-instant load times and high-speed gaming performance.</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €459 and €549</span>
+        <span class="new-price"></span>
       </div>
     </div>
  <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/627242507_1250028887229461_2747923379988862429_n.jpg?stp=dst-jpg_tt6&cstp=mx886x1109&ctp=s886x1109&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=47eWl6l-CJUQ7kNvwHLxtRG&_nc_oc=AdoJM7jjIJ1xCHP2o4SNA_mrL3wezqXOi38sGH4b5KnGywlM77O8IYMDI-l6zjz--8k&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=cyONtxEpJFDHT5HF76ZiYA&_nc_ss=7b2a8&oh=00_AQFnRM5QiMHh_eR1iKfrvdC6x6NzS0tgPapzQ5E7yld5hg&oe=6A84E56F" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFxumy2OTCPSPshVK_tNuhFYcy7NQZlQA96Df0pkFDJw&s=10" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDBmHFaIGlSPnGJ-sGWxxyrzmEs429ax4W0SADtq7dbi6RulBp" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Amazon Fire 7 Kids (32GB Edition) is built specifically for children aged 3–7, featuring a drop-safe Kid-Proof case with an adjustable kickstand</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price">  €99.00 and €119.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/581687369_1186631560235861_7209430632086233553_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1167&ctp=s1170x1167&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Mn8ZY_KhS2UQ7kNvwG2ozsn&_nc_oc=Adom4LmpkPjlTwcyPtR2XNHDDVQjdqt-l764KtPm28MLjWkJDpgZXzjkK0buzC5ylvI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=SwAGPFnv5GC14ZoEleu5Hw&_nc_ss=7b2a8&oh=00_AQHta5Zo1QNZJw0WgUI08GbpLNlbsW3LjHUWTBIuOhzfnA&oe=6A84F59D" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDAZ-ze9kcbnbad9qMm9kqEWy0zJdxlK8BrHeXDL_wKA&s=10" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQFysZIPy0pBjdLo2rIjUbmTuoPAEMYapQZY6WE0Yi87QvJpW2m" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Hoco HI10 8-Inch Children's Tablet features a tailored Android 14 operating system complete with dedicated Kids Mode, Parental Control settings</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €89.00 to €99.00 </span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/566229407_1168980232000994_1984379565194883351_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_aid=0&_nc_ohc=igUy8N8TDkEQ7kNvwF0PMI6&_nc_oc=AdrQPoHGyDyOu67Glt1hsvw604RSClIMKrdbX55fCD-SDQQwqqhCP6P4KVsXD2DYIy0&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=l6CupeOzvSTeI7odaGOl2Q&_nc_ss=7b2a8&oh=00_AQEczOvrrWfQYbuGL8_lUS43hUEPQh7-8Cg7jqhgv0_Inw&oe=6A84F518" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd690DZvMA1sNTeAs0-1SCyLagu0xqm8CnZoJKVUZZfg&s=10" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL8FeebTXAq1prMyPodpM5Qhg4-aQ504nqcnmt68na0g&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Sony DualSense Wireless Controller for PlayStation 5 features dynamic adaptive triggers with physical resistance levels, advanced haptic feedback </h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price">  €69.99-€74.99</span>
+        <span class="new-price"> </span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
         <img src="https://gamestop.com.pk/cdn/shop/products/turqouise.jpg?v=1707354391" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/571016863_1168980155334335_9003779694825184929_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1081&ctp=s1080x1081&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3SdR-I3w_6IQ7kNvwEaUyN-&_nc_oc=AdoQ1arMKyGeFV08YBHIvmEQQhuaJ8d8UWHpF86Mwq_mB917idhq8sp2SsGew89UZDw&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=lI4dFRsFrD9XYUt3BXgwOg&_nc_ss=7b2a8&oh=00_AQHQ8Mp-Uh5lVVoMKkwthMF9SUateI8x7IxA98Q9UQqMEw&oe=6A84E14D" class="img2" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBbNfegbLb433Lgf2dUQPUcjWXm5WA_ff6_pbsB7gamA&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Nintendo Switch Lite is a compact, lightweight gaming console designed strictly for handheld play, featuring fully integrated controls, a built-in +Control Pad...</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price">€279.00 to €299.00 </span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/561358063_1163406205891730_6795004300271253910_n.jpg?stp=dst-jpg_tt6&cstp=mx900x900&ctp=s900x900&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=E4I98qih0nkQ7kNvwGZS2L4&_nc_oc=AdowWweAX_aqIIv4_vFqmBZ9ZYbX5UHzX-_NNnSm6IZLYO61ovJ3G6SNrux4lYqUrjk&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=jMS_Q0-CYYPI_2tu9LQB0w&_nc_ss=7b2a8&oh=00_AQGwRha0JzzCS0Ce_TGlDiSjbTc47DeJKYJhsxCZuVwkWw&oe=6A84E133" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-2PEGDeKpKbrpY5T1SIYOwvUyRTB2o74GCIsz32bj4A&s=10" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJmw7a8nOIJ3UUQrQe_Jt_E4LJv53Y_Qhn4EVIBly5FtczCjrc" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Nintendo Switch OLED Model (Neon Blue & Neon Red Edition) upgrades the original hybrid formula with a vibrant 7-inch OLED screen displaying highly detailed colors</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €310.00 to €349.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/556832574_1151715997060751_4107368947650262428_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=8dOR62U1JykQ7kNvwE0ZdVF&_nc_oc=AdqpfToBqXpfiRcGfp8QLBMHLGyY6_woXrjMqmZ7PoDNDheoQCeFYspUVf_T6w8dejM&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=YmXW-t3kXKXgwcrmTMQgcA&_nc_ss=7b2a8&oh=00_AQEWV4CM23Z3LJPE8QYpTgSavU9GrV9GjaKfhqTeyfNnFQ&oe=6A84D4DD" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwmn3QiObGB7tnZMDwWGNrYam_X_zKjg1EInz-YBGyPg&s=10" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFyL4oh61O--doOptjp1qqfrYVWzkw4WQUBfQjThmCMA&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Nintendo Switch Lite (Coral & Gray Editions) is a sleek, unified gaming system purpose-built for portable handheld play, featuring fully integrated physical control buttons and a responsive built-in directional D-pad</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €199.00 to €220.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
@@ -1030,34 +1050,34 @@ font-size: 18px !important;
       <h3 class="product-title">The "NEW-4" P4 Wireless Controller is a third-party gamepad shaped like a PlayStation 5 controller but engineered specifically for PlayStation 4 consoles.</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €20.00 to €35.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482131181_994200282812324_6490152934226432362_n.jpg?stp=dst-jpg_tt6&cstp=mx960x919&ctp=s960x919&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=cor01Nox4twQ7kNvwEFztMd&_nc_oc=Adp-StnMHykOI1AEPUgAbsl9z8UMyvE6UwM9fm3EzYs7TwnwmPTJoYjjg8cpUMnSxZY&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=gzcM6vtGq3mHiOTnSvT9SA&_nc_ss=7b2a8&oh=00_AQEDUtZEVoKl6Ly9HROVNuQWb1gozWq-L-0SH-_LoAFDHw&oe=6A84C941" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4cjIHbluI9lAoHkbXbV1We6DyopDY9eFuvJAMSXnwyQ&s=10" class="img1" alt="Laptop">
         <img src="https://gameone.ph/media/catalog/product/mpiowebpcache/d378a0f20f83637cdb1392af8dc032a2/p/s/ps5_dualsense_wireless_controller.webp" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The official Sony DualSense Wireless Controller for PlayStation 5 features physical adaptive triggers that adjust resistance dynamically</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €69.99 to €74.99</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482303130_993042062928146_4876825997870121530_n.jpg?stp=dst-jpg_tt6&cstp=mx1166x875&ctp=s1166x875&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Z96Wm4UNcTQQ7kNvwHugwkl&_nc_oc=Adpi0Q7pq3w4f4wmagty3dxfR_0mP5T0QaBELaIay8H2YkKn0g1QQlAeNTrEAEvuod4&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=8cUORitcoO9IILJ36z2xTg&_nc_ss=7b2a8&oh=00_AQFE9aA9O2c-zSBFVpQN0PpHdzAqPLWndDbdfwTGdiYdVA&oe=6A84F164" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbnRiQ77LrtI7eM3wlV5yS6lgFov8fBQUAquTg3TtcA&s=10" class="img1" alt="Laptop">
         <img src="https://gamestop.com.pk/cdn/shop/products/atp-ps5-slim-disc-edition-console-bundle-desktop-3-Format-976.png?v=1745507798&width=1445" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Sony PlayStation 5 Slim Standard Disc Edition features a removable Ultra HD Blu-ray disc drive integrated seamlessly into a 30% more compact chassis, an upgraded custom 1TB SSD for high-speed load times</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €449.00 to €549.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/476072254_970662221832797_6334104855904510479_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x900&ctp=s1600x900&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yiawUuqMMCgQ7kNvwHhfEdn&_nc_oc=AdrZZfrRRTRGP6HJlTAvEze7Jq9n0JqOYlUNrY53QJmA4uTR2wEvDT-0u6oPDQx3deE&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=kJT6uEkOUQyj9JtnpCg98w&_nc_ss=7b2a8&oh=00_AQEuoTYwxYix3fjHVAU_Z42bL75b-331pzSd35P-OhfK1Q&oe=6A84EF28" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXoGZl-cPYb3YmXUgFxLjZvNmzu1EQurwdT8mlYs9dQ&s" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzIb3ERNDJ80BitOrIPesewQ-q4yhYN0gPZIY4kxJ1xw&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The GM-006 DTS Headphone:X V2.0 Wired Gaming Headset delivers a virtual 3D spatial audio experience with integrated 360-degree tactile vibration effects and super low-frequency bass performance
@@ -1065,24 +1085,24 @@ font-size: 18px !important;
       </h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price">€15.00 to €25.00</span>
+        <span class="new-price"></span>
       </div>
     </div>
      <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/481248567_985501757015510_4000192890805576890_n.jpg?stp=dst-jpg_tt6&cstp=mx846x545&ctp=s846x545&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=tcGDZFTEE7UQ7kNvwHwCFsB&_nc_oc=AdrLJ-0F7dnXvgKWrIGvk696u3Wxc2n1hKfdhhLKW9fjvrAgj4gW1L1yUDMSqzh8ESI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=2OH6K6S-W7gQLSuoYAq-Iw&_nc_ss=7b2a8&oh=00_AQEIc0AYT2__aHHQN1EzCXDAxZedUFZRwNs84JWRhgvP9g&oe=6A84E443" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnlllsVbjAx4U3ZOG7a4sS5Rfygel71zx2pB9MgTYlPw&s=10" class="img1" alt="Laptop">
         <img src="https://e.428.ua/img/4034314/3000/2000/geympad_xtrike_me_pc_ps4_ios_android_nintendo_wireless_gp-43~2000~2000.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Xtreme Multi-Function Gamepads offer versatile third-party gaming solutions, with the top box showcasing a wired USB gamepad designed in an Xbox-style layout </h3>
       <div class="rating">★★★★★</div>
       <div class="price">
-        <span class="new-price"> €18.00 to €25.00</span>
+        <span class="new-price"> </span>
       </div>
     </div>
 </div>
 <footer>
     <h3><a href="index.html"><b><i>Return</b></i></h3>
-     
+     <h2>Contact us for best prices</h2>
 <h4>
     <a href="https://www.facebook.com/100066670844125" target="_blank">
         <i class="fa-brands fa-facebook-f"></i>

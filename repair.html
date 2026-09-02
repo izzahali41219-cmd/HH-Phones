@@ -148,49 +148,65 @@ font-size: 45px;
   box-sizing: border-box;
    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
-
-
-.logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -1px;
+    white-space: nowrap;
 }
 
-.logo img {
-  max-height: 82px;
-  width: auto;
-  object-fit: contain;
-  background-color: #ffffff;
-  padding: 8px 14px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.logo-text .hh {
+    color: #168cff;
+    text-shadow:
+        0 0 5px rgba(45, 141, 237, 0.8),
+        0 0 12px rgba(29, 68, 104, 0.5);
 }
 
-.logo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+.logo-text .phones {
+    color: #ffffff;
+    margin-left: 5px;
+    text-shadow:
+        0 2px 4px #000,
+        0 0 8px rgba(255, 255, 255, 0.35);
 }
-.logo2 {
-  display: flex;
-  align-items: center;
-  height: 100%;
+@media (max-width: 992px) {
+
+    .logo-text {
+        font-size: 35px;
+        letter-spacing: -0.8px;
+    }
+
+    .logo-text .phones {
+        margin-left: 4px;
+    }
 }
 
-.logo2 img {
-  max-height: 142px;
-  width: auto;
-  object-fit: contain;
-  padding: 8px 14px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 30px;
+@media (max-width: 600px) {
+
+    .logo-text {
+        font-size: 28px;
+        letter-spacing: -0.6px;
+        margin-right: 10px;
+        margin-left: -35px;
+    }
+
+    .logo-text .phones {
+        margin-left: 3px;
+    }
 }
 
-.logo2 img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+@media (max-width: 380px) {
+
+    .logo-text {
+        font-size: 20px;
+        letter-spacing: -0.5px;
+    }
+
+    .logo-text .phones {
+        margin-left: 2px;
+    }
 }
 
 .navbar {
@@ -764,7 +780,10 @@ footer a{
     text-decoration: none;
 }
 footer h4{
-margin-top: 10px;
+margin-top: 20px;
+}
+footer h2{
+margin-top: 20px;
 }
 
 body {
@@ -889,10 +908,10 @@ font-size: 18px !important;
 <body>
 
 <section class="header">
-  <div class="logo">
-    <img src="https://i.pinimg.com/736x/58/01/d4/5801d49b2f94151611055c585d2e5e40.jpg" alt="HH Logo">
-  
-  </div>
+ <div class="logo-text">
+    <span class="hh">HH</span>
+    <span class="phones">Phones</span>
+</div>
 
   <nav class="navbar">
     <a href="index.html">Home</a>
@@ -947,7 +966,7 @@ font-size: 18px !important;
 <div class="products">
  <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/727551260_1358564669709215_6168718806741007305_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=22VXgwzReOEQ7kNvwEPtXwS&_nc_oc=AdrfxrPZ6C7NYZlH9N2lrzS6tzkF15se-yynTTmXHV5eNLidqj2iHxAgCQNPDbt4FCo&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=8X_VQFzHHxqywVZ8uqFY6g&_nc_ss=7b2a8&oh=00_AQHy61ugIVPD3RB1O9V0L8UrhlzH_PawO5Bli5_wUm939g&oe=6A83797E" class="img1" alt="Laptop">
+        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/727551260_1358564669709215_6168718806741007305_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s206x206&_nc_cat=108&ccb=1-7&_nc_sid=50ad20&_nc_ohc=0Dwph_mp0zEQ7kNvwFOG6L1&_nc_oc=AdpikCrlj-af1kJtX-USYBj1YxlIgx7wJs0bwV2noh1v5E-PnKt6qMBzOFnGZCQLA54&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=CEgvmUt75vZl2oHgzLhXeg&_nc_ss=7b2a8&oh=00_AQLfET-o2sJVHVGw0dKUCLsYYmL0W-5nSRB-pJuzSMxqkQ&oe=6A9C85FE" class="img1" alt="Laptop">
         <img src="https://media.naheed.pk/catalog/product/cache/ff36c7bc52e2e5dbc63cd67fba513679/1/2/1228934-3.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Cracked Back Glass & Camera Area Damage — Requires back glass replacement and inspection</h3>
@@ -958,7 +977,7 @@ font-size: 18px !important;
     </div>
 <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/727446960_1358394733059542_8622726393831505975_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=A1JPpMBLwlcQ7kNvwHedy5I&_nc_oc=Adp1A1eDFckS5fZ3CSPSCHAYllxqIpxkdrObDfdNCLoAVsK8g8OqGyPhTc579l7aWUk&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=pbpancZSF5v7UOwn62jMOg&_nc_ss=7b2a8&oh=00_AQHjMOc0BtkZ9lQBdeG00lghR2otZHtlcHZ0kutV3Oktxg&oe=6A838879" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/fb/03/a5/fb03a5d53e42cb800f7902f6ee8a00e9.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSefXMeGUfWht6NH7U2wij4j_45srMYSJzP6MHsvuoW5ZI9VAyA" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered front screen/display.</h3>
@@ -969,7 +988,7 @@ font-size: 18px !important;
     </div>
 <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/727621723_1357757089789973_2501241528250758304_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7EHeRmucWQ0Q7kNvwFpGJmy&_nc_oc=AdqGOwgfVom1fx1hS4zaQ3GtDDGQMQgSZ62go5EM_AKitYIkeisw9sywkaTARNLBoJ4&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=K2Ie0gfvQtmPINLYT1XC6g&_nc_ss=7b2a8&oh=00_AQG9AsDFPLJgsEalNkZC4PD7Q90MSJV2qKuFJui1kJOFIw&oe=6A8395D4" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/52/1f/27/521f270a53843c46121e3c34ca50c9d1.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmul0M_-H7KQvObfCpJTybotlL2evavoMhAVDJt9X3S5VRGe775O-E79CX&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Cracked and shattered rear glass/back panel, with heavy damage around the lower edge and camera area.</h3>
@@ -980,7 +999,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/702281112_1332913482274334_5504821453007818812_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=iGgAlTnxPmkQ7kNvwGY7T_s&_nc_oc=AdrYOQFZcniC-WBwi0_VY-y1pRcIjQMwDGnVqNlxam2fGs92wW44NNDtTg-CavzNPLw&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=jDYqq6kkmZTR-Mjwb09njg&_nc_ss=7b2a8&oh=00_AQEMVrNtv1cyeI2NUD3_ShFUG5Wx4PvRiAoUle2ut-9HZQ&oe=6A838B4C" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/67/66/1b/67661be05ec5bfd56a93e21470ecc333.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjM6KBZdVHAPUlnp7qTJAEAmuIhbY7hmXYaQX3bMlOTfCsA0fB" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered rear glass/back panel, with extensive cracks across the entire back and heavy damage at the bottom edge.</h3>
@@ -991,7 +1010,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/658132454_1292121079686908_122628429716774842_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=I9UWKNtPRR0Q7kNvwGIDWwV&_nc_oc=AdrMWNnq3_OBKh07ezIiz9VdwM2VC_N2c9yC0KROtJHcEELxwpb_0bWxt6F5po4aPrk&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=YcOeVx_zxMw_nOQDx_N_Ng&_nc_ss=7b2a8&oh=00_AQGeVirx3Gf1VHlfuruDlylRihq1MMj1X5JrpJQkhsno2w&oe=6A83A8AE" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/b0/31/9a/b0319ac9d71b5243a49cc559d0670280.jpg" class="img1" alt="Laptop">
         <img src="https://m.media-amazon.com/images/I/61sd-ifw0ML._AC_UF350,350_QL80_.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered front screen/display, with extensive cracks across the glass.</h3>
@@ -1002,7 +1021,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/658311558_1288736890025327_2326956309800728405_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=dmPXy_0xOZ8Q7kNvwH6UexG&_nc_oc=AdrbXdwSvKUCqg73mKrZz4U0jSuhscm_f7EreKaZWNS4fx7p_FDWAkYNUgyALuDOpaU&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=9rJAhEBE6wzzTyYUHZ4gwg&_nc_ss=7b2a8&oh=00_AQGqLwbRjJYml1bULhZ8Z658LMNnK14d75GaOYQEEiTkcA&oe=6A83A581" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/0c/8b/4f/0c8b4fab2995e5a8b3638eee8bef37ca.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHB3BgqzXGzarihHvaIvLP1XifFzapmvCz3daMmIWRPA&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered tablet screen/display, with extensive cracks and broken glass around the edges.</h3>
@@ -1013,7 +1032,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/658858754_1288131966752486_9083683524121601873_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=FbZZrNuxa-UQ7kNvwGQOBzN&_nc_oc=AdpkBwDjKiuynPJnoAlb1N1E_e61cnd1xn5BxYo7MQItzWv240fwTc073RzQ325xrl8&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=DJZGLY_AHEDmhMVcNcAjKQ&_nc_ss=7b2a8&oh=00_AQEGb-hKIQr6ed796W9-fcRrf7ha_8li6IUh-cX6PekLGA&oe=6A83AC9E" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/fb/03/a5/fb03a5d53e42cb800f7902f6ee8a00e9.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSb_bLfGzG_8FhLVm64DhXBdOGjjLzLok345D_-FLDEUl5dYjv" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Multiple severely cracked and shattered phone screens, with broken display glass and damaged front panels requiring screen replacement.</h3>
@@ -1024,7 +1043,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/655689624_1286194016946281_5563535237849794948_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1461&ctp=s1170x1461&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fWVte8_E6LUQ7kNvwFJc-BI&_nc_oc=AdoBKLMUXLPRUPJ4fphuDIIxCmq07YbfpPi8RkTFqJlRF2sPSt-DO-7U5sqIzpJXw_c&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=JGaN01kurNrNGhnpoGKbTw&_nc_ss=7b2a8&oh=00_AQG3Ovd_0k_2BJuqvuOlEOO96yt9Xy9ilJujoeiUQAjsRA&oe=6A83A5CF" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/c0/2e/d4/c02ed463056e510a6f139c90ad415fe9.jpg" class="img1" alt="Laptop">
         <img src="https://images.olx.com.pk/thumbnails/637125229-400x300.jpeg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Cracked and shattered rear glass/back panel, with multiple deep cracks across the back of the Samsung phone.</h3>
@@ -1035,7 +1054,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/616555825_1230488569183493_4934813912536723394_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1080&ctp=s1440x1080&_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vwcTZGUiRd0Q7kNvwEA2vlG&_nc_oc=AdpSctgMZOyFsNMixOpmt-9evpdOB-r40knAVUDgMwD5-Sym_HE8c7hvcjcZ_eVdZAE&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=1PE9uc7biTXPzwTi4AGMjg&_nc_ss=7b2a8&oh=00_AQHqzBNjnoZgfB7gJuuGjqEYni-a5dnx8ZRzvervOtQEFg&oe=6A838373" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/fb/bc/07/fbbc07eca7023e422d190eded067aff1.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-IWAFGdTgzAlZ9JWCfOS5fTn0JbvAkvWJLozXarBG7g&s" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely shattered rear glass/back panel, with extensive cracks and exposed internal components around the back and camera area.</h3>
@@ -1046,7 +1065,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482357144_994552086110477_4711430601229180537_n.jpg?stp=dst-jpg_tt6&cstp=mx1512x2016&ctp=s1512x2016&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=k_4gRBSZoEwQ7kNvwFW1CJX&_nc_oc=AdpGZXu4xx22ZaD6lsanjk7Z7ukzsdWHKTdPELfHA4_4HIooS46r-v5Z35PMtJzMIl0&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=EntrlHs5xl9ZKHSbJLeO3g&_nc_ss=7b2a8&oh=00_AQFYN2NHuMSWBPJFqifIp689_nOvx9tlW-5ARLJlQIjfqQ&oe=6A83B53E" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/6d/d7/6d/6dd76d59bc514e4f1be4249cb362dd99.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR6piwE1GgFBcoWmjYx1YTYNBN-wlJt1CR50rgGdpWOA&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered front screen/display, with extensive cracks across the glass and visible screen damage.</h3>
@@ -1057,8 +1076,8 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482031553_992030756362610_7593898392030286526_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=sxSpONPh-1UQ7kNvwHcM5VD&_nc_oc=Adr2Sc-x9lB_G1sNw7y3FFOsghVUdSLNKlYfxRkdh2DMMpBiesfrXlR6XUj2mVEyjgk&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=s1zGjTHe4_V-mSiXFHO_VQ&_nc_ss=7b2a8&oh=00_AQEF6DDrX8yhttRDeAIQ5z3rNtjm_vgLsGlNvpTifGxoDA&oe=6A839D6A" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/482002386_992030693029283_6479734198436847481_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=AFuhkO5GfPEQ7kNvwELmq0S&_nc_oc=AdocQTOJgSWCFj01iCn4t1WWawqramhjOkcaFSoHzr6awyKBtPABxbg30rEXPE9Hg6c&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=g1wrDZ3-xejCupbyrEM9QQ&_nc_ss=7b2a8&oh=00_AQEzjCWfVvt1PGadKE02gqgTZtd__oagVgI7H3Kds-swCQ&oe=6A8398A2" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/2c/70/08/2c700835a14249f18ce8d5c58cbfaf49.jpg" class="img1" alt="Laptop">
+        <img src="https://i.ebayimg.com/images/g/-qsAAeSwM0tpmTDi/s-l1200.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Cracked and scratched front screen/display, with visible spiderweb cracks and damage across the lower-right area.</h3>
       <div class="rating">★★★★★</div>
@@ -1068,8 +1087,8 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/470160216_18012339938659062_1583348854860796752_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s1440x1800&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aFe6W-DQikYQ7kNvwH1TfMV&_nc_oc=AdrH-KLDvV8o-f3YwtFBc1DVE1BdPQnwWhjR98sAc3HdiaSNotIA1YpGeCAPUQbyzPI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=Fo395eFWtp0sGkf6Ugm3-g&_nc_ss=7b2a8&oh=00_AQEoyKWhtXvpzZ9Lnxjd2AZ19QQYdQTGv2S1FQLEyhvLqA&oe=6A8393A0" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/470193365_18012339917659062_4484280113980279219_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s1440x1800&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uetSXRdbA_gQ7kNvwHJy_1e&_nc_oc=AdowRoIVxwxLVuaWKK-b_t0Qp38eMmzDOfzn_ILROxCaWXJyQb2UVsfKrMzdaKYx2e4&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=UsohPgr7eZHmMC8hl4cJkg&_nc_ss=7b2a8&oh=00_AQFqKS327YMHWxJzc44qal4-kPk4TV6VabEfUXhkj-Y4Mg&oe=6A83AFF4" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/f1/77/4a/f1774a7302326d779a00c01d6e82d49e.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/f6/ff/10/f6ff10114a0db656dce8cc1127c5852e.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked and shattered rear glass/back panel, with extensive cracks around the camera module and across the entire back cover.</h3>
        <div class="rating">★★★★★</div>
@@ -1079,7 +1098,7 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/480868497_987192776846408_6725095228349684450_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XKr6umrYO_sQ7kNvwGPrcG1&_nc_oc=AdqPHTUmg8YDTrMDeT8Hn5RGUNFCBiJ_3bY6s7EqqWFNniF3KJUDMlBJlZRc-CJgrdQ&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=PU2Zm76fwIA-ZL-5_HnsfQ&_nc_ss=7b2a8&oh=00_AQFLWbCwPTrS-raJrRFjwAntOspAYkyywproYatCJSA47g&oe=6A83BA41" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/a4/56/81/a45681361db1c95d08a1d81081c7b35f.jpg" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSefXMeGUfWht6NH7U2wij4j_45srMYSJzP6MHsvuoW5ZI9VAyA" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Severely cracked front screen/display, with a major impact crack and spiderweb damage around the upper-right area.</h3>
@@ -1090,8 +1109,8 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/481251489_987174973514855_4766691613907315618_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s1440x1440&_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=W9Ej1bKa1bsQ7kNvwHVsV7u&_nc_oc=AdrTq8_WQLGyhrDiz0nVZdQZ2YQlG5cSpXL4n5BuOqkbsMkySXnrTyA-_stVAbA8u1Y&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=WDIF5KmSS_zVbKN7BviPAw&_nc_ss=7b2a8&oh=00_AQEjLmNFUJ7uSYESYCtLhl0G_5A1WlKnzafp9adJKXQwwA&oe=6A838599" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/470203960_18012338999659062_2588271716589993894_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1800&ctp=s1440x1800&_nc_cat=104&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zQsef04Y8B8Q7kNvwGUNfl5&_nc_oc=Ado84JIpJ0t91IAQuqHx-K6Peyx5jv0lZh2PBKKf4kEQ8SCpLip8A59C1TWuXw32Bm0&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=9ooA4I0_Pq8R3MtQomZ99Q&_nc_ss=7b2a8&oh=00_AQH_9TlPssUROkUqcQTAT64Ju9I5AzjOfv3Qj4G88YCVeA&oe=6A83A2AA" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/92/b2/28/92b2282f7b2f42540264b0b7eabe6b9e.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/49/c7/9d/49c79de4d52831cdecabb1f835e1ae83.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">Internal hardware damage — the phone is opened for repair, with exposed motherboard, battery, flex cables, and loose screws/components.</h3>
      <div class="rating">★★★★★</div>
@@ -1101,10 +1120,10 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/480744899_983572953875057_1053540938408196093_n.jpg?stp=c0.119.1080.1080a_cp6_dst-jpg_tt6&cstp=mx1080x1080&ctp=s206x206&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=vf6ncBz8VVQQ7kNvwHeUuVS&_nc_oc=Adp8NtMCLJ_p-RovEmwwOl9U0coCIA3-BFFpR70WBi9ltyfpqvyRExMaAjQmDoeboL0&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=R1cQRyJHCJ66NAZvPI1K0Q&_nc_ss=7b2a8&oh=00_AQEEO1zoMYFDwMigm6q8LhiZvT0BnBMfqrjYtsCFhJZS2w&oe=6A839ED1" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/480767896_982501733982179_1447345664787932111_n.jpg?stp=dst-jpg_tt6&cstp=mx960x960&ctp=s206x206&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=_zk2dM_vA88Q7kNvwEp1IEO&_nc_oc=Adpk8GIzBICmu6qwJ-Zpukt28NaXLCdm9TF_YrSQESTSf_EBFkoVmdKoX9mVWAROGPs&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=R1cQRyJHCJ66NAZvPI1K0Q&_nc_ss=7b2a8&oh=00_AQEkn1PJJ_6MVZnJoEb7xlakOyZ0H5p-PljRgNSKWA-wQg&oe=6A83A19F" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/b2/77/d2/b277d237052e00494d75e9ecb97261bf.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/ec/11/23/ec112348290997555ddc6d9532ca3824.jpg" class="img2" alt="Laptop">
       </div>
-      <h3 class="product-title">Internal hardware repair — the iPhone is opened with exposed battery, motherboard, connectors, and internal components requiring professional servicing.</h3>
+      <h3 class="product-title">The image displays a severe internal impact fracture of a laptop LCD panel, resulting in localized physical cracking of the glass matrix.</h3>
       <div class="rating">★★★★★</div>
       <div class="price">
         <span class="new-price"> </span>
@@ -1112,10 +1131,10 @@ font-size: 18px !important;
     </div>
     <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/481204595_985631263669226_1569265681762994860_n.jpg?stp=c0.223.1170.1170a_dst-jpg_tt6&cstp=mx1170x1170&ctp=s206x206&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=J-SVauTj-0AQ7kNvwGZ8Kq5&_nc_oc=AdqzmtoqGUO94plkSbFG4whLgs8HGDuh1jxZZdYjpFo0O_WFDx6IvIKY9qaQ2Y3AoxY&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=a_ltC0Qlou66aJPNkDY-mg&_nc_ss=7b2a8&oh=00_AQHPytRrl1pDbNRoVMcMEYdnPB8y3eF8IR_zwYjiV-KzgQ&oe=6A83A547" class="img1" alt="Laptop">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/481473833_985627550336264_1112716136484873232_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s206x206&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=50ad20&_nc_ohc=0Wo47Z0MgdMQ7kNvwFZk_qX&_nc_oc=Ado-14zcxI2K1nNrqN8J6ZHh_T2kJyeyczGRhnzRTjvJ6PmkFzfy2irrByRuSs_tcBk&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=a_ltC0Qlou66aJPNkDY-mg&_nc_ss=7b2a8&oh=00_AQEw-bnmsyxE-pyGNsWusK3cwTLdYGYBM2i5baQ9GxxdZA&oe=6A83AD96" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/45/a2/db/45a2db2c3d8dd864d5a4066a6104e192.jpg" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO92gQEybe_TDAYRLvHfs8GK037eH4Bmc5ns2ratB35A&s=10" class="img2" alt="Laptop">
       </div>
-      <h3 class="product-title">HH Phones; repairs your phones, mobiles and any other products with fault </h3>
+      <h3 class="product-title">The image shows an iPhone 12 with catastrophic rear glass damage, featuring extensive spiderweb fractures and missing shards that completely expose the internal components. </h3>
       <div class="rating">★★★★★</div>
       <div class="price">
         <span class="new-price"> </span>
@@ -1125,7 +1144,7 @@ font-size: 18px !important;
 </div>
 <footer>
 <h3><a href="index.html"><b><i>Return</b></i></h3>
-     
+   <h2>Contact us for best prices</h2>  
 <h4>
     <a href="https://www.facebook.com/100066670844125" target="_blank">
         <i class="fa-brands fa-facebook-f"></i>
