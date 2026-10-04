@@ -149,104 +149,170 @@ font-size: 45px;
    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
 
-.logo-text {
-    font-family: Arial, sans-serif;
-    font-size: 50px;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: -1px;
+.logo-text { 
+    font-family: Arial, sans-serif; 
+    font-size: 50px; 
+    font-weight: 800; 
+    font-style: italic; 
+    letter-spacing: -1px; 
+    white-space: nowrap; 
+    flex-shrink: 0;
+} 
+ 
+.logo-text .hh { 
+    color: #168cff; 
+    text-shadow: 
+        0 0 5px rgba(45, 141, 237, 0.8), 
+        0 0 12px rgba(29, 68, 104, 0.5); 
+} 
+ 
+.logo-text .phones { 
+    color: #ffffff; 
+    margin-left: 5px; 
+    text-shadow: 
+        0 2px 4px #000, 
+        0 0 8px rgba(255, 255, 255, 0.35); 
+} 
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 35px; 
+    flex-wrap: nowrap;
+    min-width: 0;
+} 
+ 
+.navbar a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 17px; 
+    font-weight: 500; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    position: relative; 
+    transition: color 0.3s ease, transform 0.25s ease; 
     white-space: nowrap;
+} 
+ 
+.navbar a:hover { 
+    color: #ffd700; 
+    transform: translateY(-1px); 
+} 
+
+.navbar > a::after { 
+    content: ''; 
+    position: absolute; 
+    width: 0; 
+    height: 2px; 
+    bottom: -6px; 
+    left: 0; 
+    background-color: #ffd700; 
+    transition: width 0.3s ease; 
+} 
+ 
+.navbar > a:hover::after { 
+    width: 100%; 
 }
 
-.logo-text .hh {
-    color: #168cff;
-    text-shadow:
-        0 0 5px rgba(45, 141, 237, 0.8),
-        0 0 12px rgba(29, 68, 104, 0.5);
-}
-
-.logo-text .phones {
-    color: #ffffff;
-    margin-left: 5px;
-    text-shadow:
-        0 2px 4px #000,
-        0 0 8px rgba(255, 255, 255, 0.35);
-}
-@media (max-width: 992px) {
-
+@media (max-width: 1100px) {
     .logo-text {
-        font-size: 35px;
-        letter-spacing: -0.8px;
+        font-size: 48px;
     }
 
-    .logo-text .phones {
-        margin-left: 4px;
-    }
-}
-
-@media (max-width: 600px) {
-
-   .logo-text {
-        font-size: 28px;
-        letter-spacing: -0.6px;
-        margin-right: 10px;
-        margin-left: -35px;
+    .navbar {
+        gap: 25px;
     }
 
-    .logo-text .phones {
-        margin-left: 3px;
+    .navbar a {
+        font-size: 26px;
     }
 }
 
-@media (max-width: 380px) {
-
+@media (max-width: 900px) {
     .logo-text {
+        font-size: 42px;
+    }
+
+    .navbar {
+        gap: 19px;
+    }
+
+    .navbar a {
         font-size: 22px;
-        letter-spacing: -0.5px;
-    }
-
-    .logo-text .phones {
-        margin-left: 2px;
     }
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
+@media (max-width: 700px) {
+    .logo-text {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    .navbar {
+        gap: 13px;
+    }
+
+    .navbar a {
+        font-size: 20px;
+    }
 }
 
-.navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    position: relative;
-    transition: color 0.3s ease, transform 0.25s ease;
+@media (max-width: 550px) {
+
+    .logo-text {
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        margin-right: 20px;
+        margin-left: -30px;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 11px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+}
+@media (max-width: 420px) {
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 9px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
 }
 
-.navbar a:hover {
-    color: #ffd700;
-    transform: translateY(-1px);
-}
-.navbar > a::after {
-    content: '';
-    position: absolute;
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 16px;
+    }
 
-    width: 0;
-    height: 2px;
+    .navbar {
+        gap: 7px;
+    }
 
-    bottom: -6px;
-    left: 0;
-
-    background-color: #ffd700;
-
-    transition: width 0.3s ease;
-}
-
-.navbar > a:hover::after {
-    width: 100%;
+    .navbar a {
+        font-size: 10px;
+    }
 }
 .dropdown {
     position: relative;
@@ -345,11 +411,6 @@ font-size: 45px;
 
 @media (max-width: 600px) {
 
-    .navbar {
-        gap: 15px;
-        overflow: visible !important;
-    }
-
 
     .dropdown {
         position: relative;
@@ -441,26 +502,11 @@ font-size: 45px;
         transform: translateX(5px);
     }
 
-.logo img {
-        max-height: 70px;
-        padding: 5px 8px;
-    }
 
-    .logo {
-        margin-right: 15px;
-    }
 }
 
 
 @media (max-width: 400px) {
-
-    .navbar {
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 13px;
-    }
 
     .dropdown-link {
         font-size: 13px;
@@ -958,7 +1004,6 @@ font-size: 18px !important;
   <div class="hero-text">
     <h1>ADD-ONS</h1>
     <p>Complete your tech experience with premium add-ons.</p>
-    <a href="#buy">Buy Now</a>
   </div>
   <img src="https://img.magnific.com/premium-photo/variety-modern-electronic-devices-are-spread-out-wooden-table_14117-735943.jpg" class="hero-img">
 </div>
@@ -995,11 +1040,11 @@ font-size: 18px !important;
 
  <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/502735473_1054170450148640_7283729331596796792_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1080&ctp=s1080x1080&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=k7QqqQV2secQ7kNvwHT_mWm&_nc_oc=AdrSGUFF4ooCWYcgdaYz-3RTHyEeIeAFV92k-XPmevS3k5c3DJgyHoeruOCoKibvRCo&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=33Qy9I4wxOtiVUNkQ8Tqug&_nc_ss=7b2a8&oh=00_AQLW70j613bxd6grOoZHE8xhY7LhmXKHpyUq7kBPtFmo3A&oe=6A9CA615" class="img1" alt="Laptop">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF4RAvAKGyyunzptJLwB8i1O_VzPv1TTAYZL7G25HcXA&s=10" class="img2" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/51/84/c8/5184c88770b67edfff3ebd700698bcee.jpg" class="img1" alt="Laptop">
+        <img src="https://static01.galaxus.com/productimages/7/1/2/3/6/6/7/4/7/9/6/7/2/3/2/3/4/9/7/0196d415-d663-7871-a8dd-17beb5683283_720.jpeg" class="img2" alt="Laptop">
       </div>
-      <h3 class="product-title">Galaxy Watch4: Wear OS smartwatch with advanced health tracking, ECG, sleep monitoring, body composition analysis, and Android connectivity.</h3> 
-      <div class="rating">★★★★★</div>
+      <h3 class="product-title">The Intenso True Wireless Earbuds Lineup featured in the image includes the WhiteBuds, BlackBuds, and BudsMicro, all built for stable connectivity using modern Bluetooth protocols.</h3>
+       <div class="rating">★★★★★</div>
       <div class="price">
         <span class="new-price"></span>
       </div>
@@ -1308,7 +1353,7 @@ font-size: 18px !important;
 
     <div class="product-card">
       <div class="product-img">
-        <img src="https://astralite.store/cdn/shop/files/gsh2.webp?v=1706885370&width=1445" class="img1" alt="Laptop">
+        <img src="https://gadgetbazaar.com.pk/cdn/shop/files/RGB-G-LAMP-FAST-WIRELESS-CHARGING-BLUETOOTH-SPEAKER-2301-Gadget-Bazaar-7486.webp?v=1708879452&width=1445" class="img1" alt="Laptop">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpoLoi2_sFMuzYjhVi35eN-XAoCwC446UfrokTSVudKjcniHPstzdpqs&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">This multi-functional "G-shaped" bedside accessory integrates a 5W mono Bluetooth speaker with a 10W fast wireless charging pad located right on top of its center bridge</h3>

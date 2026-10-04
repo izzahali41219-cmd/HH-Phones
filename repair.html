@@ -148,104 +148,170 @@ font-size: 45px;
   box-sizing: border-box;
    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
-.logo-text {
-    font-family: Arial, sans-serif;
-    font-size: 50px;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: -1px;
+.logo-text { 
+    font-family: Arial, sans-serif; 
+    font-size: 50px; 
+    font-weight: 800; 
+    font-style: italic; 
+    letter-spacing: -1px; 
+    white-space: nowrap; 
+    flex-shrink: 0;
+} 
+ 
+.logo-text .hh { 
+    color: #168cff; 
+    text-shadow: 
+        0 0 5px rgba(45, 141, 237, 0.8), 
+        0 0 12px rgba(29, 68, 104, 0.5); 
+} 
+ 
+.logo-text .phones { 
+    color: #ffffff; 
+    margin-left: 5px; 
+    text-shadow: 
+        0 2px 4px #000, 
+        0 0 8px rgba(255, 255, 255, 0.35); 
+} 
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 35px; 
+    flex-wrap: nowrap;
+    min-width: 0;
+} 
+ 
+.navbar a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 17px; 
+    font-weight: 500; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    position: relative; 
+    transition: color 0.3s ease, transform 0.25s ease; 
     white-space: nowrap;
+} 
+ 
+.navbar a:hover { 
+    color: #ffd700; 
+    transform: translateY(-1px); 
+} 
+
+.navbar > a::after { 
+    content: ''; 
+    position: absolute; 
+    width: 0; 
+    height: 2px; 
+    bottom: -6px; 
+    left: 0; 
+    background-color: #ffd700; 
+    transition: width 0.3s ease; 
+} 
+ 
+.navbar > a:hover::after { 
+    width: 100%; 
 }
 
-.logo-text .hh {
-    color: #168cff;
-    text-shadow:
-        0 0 5px rgba(45, 141, 237, 0.8),
-        0 0 12px rgba(29, 68, 104, 0.5);
-}
-
-.logo-text .phones {
-    color: #ffffff;
-    margin-left: 5px;
-    text-shadow:
-        0 2px 4px #000,
-        0 0 8px rgba(255, 255, 255, 0.35);
-}
-@media (max-width: 992px) {
-
+@media (max-width: 1100px) {
     .logo-text {
-        font-size: 35px;
-        letter-spacing: -0.8px;
+        font-size: 48px;
     }
 
-    .logo-text .phones {
-        margin-left: 4px;
+    .navbar {
+        gap: 25px;
+    }
+
+    .navbar a {
+        font-size: 26px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .logo-text {
+        font-size: 42px;
+    }
 
+    .navbar {
+        gap: 19px;
+    }
+
+    .navbar a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 700px) {
     .logo-text {
         font-size: 28px;
-        letter-spacing: -0.6px;
-        margin-right: 10px;
-        margin-left: -35px;
+        margin: 0;
     }
 
-    .logo-text .phones {
-        margin-left: 3px;
+    .navbar {
+        gap: 13px;
+    }
+
+    .navbar a {
+        font-size: 20px;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 550px) {
 
     .logo-text {
-        font-size: 20px;
-        letter-spacing: -0.5px;
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        margin-right: 20px;
+        margin-left: -30px;
     }
 
-    .logo-text .phones {
-        margin-left: 2px;
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 11px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+}
+@media (max-width: 420px) {
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 9px;
+    }
+
+    .navbar a {
+        font-size: 12px;
     }
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 16px;
+    }
 
-.navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    position: relative;
-    transition: color 0.3s ease, transform 0.25s ease;
-}
+    .navbar {
+        gap: 7px;
+    }
 
-.navbar a:hover {
-    color: #ffd700;
-    transform: translateY(-1px);
-}
-.navbar > a::after {
-    content: '';
-    position: absolute;
-
-    width: 0;
-    height: 2px;
-
-    bottom: -6px;
-    left: 0;
-
-    background-color: #ffd700;
-
-    transition: width 0.3s ease;
-}
-
-.navbar > a:hover::after {
-    width: 100%;
+    .navbar a {
+        font-size: 10px;
+    }
 }
 .dropdown {
     position: relative;
@@ -343,12 +409,6 @@ font-size: 45px;
 
 
 @media (max-width: 600px) {
-
-    .navbar {
-        gap: 15px;
-        overflow: visible !important;
-    }
-
 
     .dropdown {
         position: relative;
@@ -453,14 +513,6 @@ font-size: 45px;
 
 
 @media (max-width: 400px) {
-
-    .navbar {
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 13px;
-    }
 
     .dropdown-link {
         font-size: 13px;
@@ -954,7 +1006,6 @@ font-size: 18px !important;
   <div class="hero-text">
     <h1>Repairing Services</h1>
     <p>Expert Mobile Repair. Reliable Service. Your Phone, Restored.</p>
-    <a href="#buy">Buy Now</a>
   </div>
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwyhLFDTou1DsCupKYEpEnfuAXifU8l5LWy02KVkLgyg&s=10" class="hero-img">
 </div>
@@ -964,17 +1015,7 @@ font-size: 18px !important;
 </section>
 
 <div class="products">
- <div class="product-card">
-      <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/727551260_1358564669709215_6168718806741007305_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s206x206&_nc_cat=108&ccb=1-7&_nc_sid=50ad20&_nc_ohc=0Dwph_mp0zEQ7kNvwFOG6L1&_nc_oc=AdpikCrlj-af1kJtX-USYBj1YxlIgx7wJs0bwV2noh1v5E-PnKt6qMBzOFnGZCQLA54&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=CEgvmUt75vZl2oHgzLhXeg&_nc_ss=7b2a8&oh=00_AQLfET-o2sJVHVGw0dKUCLsYYmL0W-5nSRB-pJuzSMxqkQ&oe=6A9C85FE" class="img1" alt="Laptop">
-        <img src="https://media.naheed.pk/catalog/product/cache/ff36c7bc52e2e5dbc63cd67fba513679/1/2/1228934-3.jpg" class="img2" alt="Laptop">
-      </div>
-      <h3 class="product-title">Cracked Back Glass & Camera Area Damage — Requires back glass replacement and inspection</h3>
-      <div class="rating">★★★★★</div>
-      <div class="price">
-        <span class="new-price"> </span>
-      </div>
-    </div>
+ 
 <div class="product-card">
       <div class="product-img">
         <img src="https://i.pinimg.com/736x/fb/03/a5/fb03a5d53e42cb800f7902f6ee8a00e9.jpg" class="img1" alt="Laptop">
@@ -1135,6 +1176,50 @@ font-size: 18px !important;
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO92gQEybe_TDAYRLvHfs8GK037eH4Bmc5ns2ratB35A&s=10" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The image shows an iPhone 12 with catastrophic rear glass damage, featuring extensive spiderweb fractures and missing shards that completely expose the internal components. </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> </span>
+      </div>
+    </div>
+    </div>
+    <h1 align="center">OUR SERVICES</h1>
+<div class="products">
+      <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsv_Wzabq48KuXkuBZp54Q8rHrkLRsWjHzO2XNKxW6bA&s=10" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwz0nqpsZlmK7-1jWA1UFhv2x6kQzGiYyE4M0fLmgIuA&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Professional laptop repair for damaged screens, hardware issues, charging problems, and internal component faults. </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> </span>
+      </div>
+    </div>  <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNF9GJ3ZBzSePM4RsAT7HdCWxSD7x6cqkjgB__agNfjw&s=10" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_G9R8NA61IXiZJXVxA7_doPoO1knAKHVpSaQxqTn7ug&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Expert MacBook repair covering screen damage, battery issues, charging faults, and internal hardware problems</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> </span>
+      </div>
+    </div>  <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikAf2wJ29oQUgOACnYbIGFVvQ2G5-n50LZpLjAQtrLQ&s=10" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfRF2nXdAIThcHdMHZePBs9EH2jkQ4za_4iZvR8-Mrhw&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Gaming console repair for power issues, HDMI faults, overheating, damaged ports, and other hardware problems.</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> </span>
+      </div>
+    </div>  <div class="product-card">
+      <div class="product-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzdexnsHOZLt29nzgGvyjyAOSaLC6JtsJF5APSIXUL-A&s=10" class="img1" alt="Laptop">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkW7VjcPgym_TrMMjjZLCuLsQGuXeiG7XZQrHtMr5xlQ&s=10" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">Mobile repair for cracked screens, battery issues, charging faults, damaged ports, and other hardware problems. </h3>
       <div class="rating">★★★★★</div>
       <div class="price">
         <span class="new-price"> </span>

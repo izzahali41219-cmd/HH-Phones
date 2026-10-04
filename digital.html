@@ -156,96 +156,170 @@ font-size: 45px;
     letter-spacing: -1px;
     white-space: nowrap;
 }
+.logo-text { 
+    font-family: Arial, sans-serif; 
+    font-size: 50px; 
+    font-weight: 800; 
+    font-style: italic; 
+    letter-spacing: -1px; 
+    white-space: nowrap; 
+    flex-shrink: 0;
+} 
+ 
+.logo-text .hh { 
+    color: #168cff; 
+    text-shadow: 
+        0 0 5px rgba(45, 141, 237, 0.8), 
+        0 0 12px rgba(29, 68, 104, 0.5); 
+} 
+ 
+.logo-text .phones { 
+    color: #ffffff; 
+    margin-left: 5px; 
+    text-shadow: 
+        0 2px 4px #000, 
+        0 0 8px rgba(255, 255, 255, 0.35); 
+} 
 
-.logo-text .hh {
-    color: #168cff;
-    text-shadow:
-        0 0 5px rgba(45, 141, 237, 0.8),
-        0 0 12px rgba(29, 68, 104, 0.5);
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end;
+    gap: 35px; 
+    flex-wrap: nowrap;
+    min-width: 0;
+} 
+ 
+.navbar a { 
+    color: #ffffff; 
+    text-decoration: none; 
+    font-size: 17px; 
+    font-weight: 500; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    position: relative; 
+    transition: color 0.3s ease, transform 0.25s ease; 
+    white-space: nowrap;
+} 
+ 
+.navbar a:hover { 
+    color: #ffd700; 
+    transform: translateY(-1px); 
+} 
+
+.navbar > a::after { 
+    content: ''; 
+    position: absolute; 
+    width: 0; 
+    height: 2px; 
+    bottom: -6px; 
+    left: 0; 
+    background-color: #ffd700; 
+    transition: width 0.3s ease; 
+} 
+ 
+.navbar > a:hover::after { 
+    width: 100%; 
 }
 
-.logo-text .phones {
-    color: #ffffff;
-    margin-left: 5px;
-    text-shadow:
-        0 2px 4px #000,
-        0 0 8px rgba(255, 255, 255, 0.35);
-}
-@media (max-width: 992px) {
-
+@media (max-width: 1100px) {
     .logo-text {
-        font-size: 35px;
-        letter-spacing: -0.8px;
+        font-size: 48px;
     }
 
-    .logo-text .phones {
-        margin-left: 4px;
+    .navbar {
+        gap: 25px;
+    }
+
+    .navbar a {
+        font-size: 26px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .logo-text {
+        font-size: 42px;
+    }
 
+    .navbar {
+        gap: 19px;
+    }
+
+    .navbar a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 700px) {
     .logo-text {
         font-size: 28px;
-        letter-spacing: -0.6px;
-        margin-right: 10px;
-        margin-left: -35px;
+        margin: 0;
     }
 
-    .logo-text .phones {
-        margin-left: 3px;
+    .navbar {
+        gap: 13px;
+    }
+
+    .navbar a {
+        font-size: 20px;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 550px) {
 
     .logo-text {
-        font-size: 22px;
-        letter-spacing: -0.5px;
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        flex-shrink: 0;
+        margin-right: 20px;
+        margin-left: -30px;
     }
 
-    .logo-text .phones {
-        margin-left: 2px;
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 11px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        white-space: nowrap;
+    }
+}
+@media (max-width: 420px) {
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 9px;
+    }
+
+    .navbar a {
+        font-size: 12px;
     }
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 16px;
+    }
 
-.navbar a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    position: relative;
-    transition: color 0.3s ease, transform 0.25s ease;
-}
+    .navbar {
+        gap: 7px;
+    }
 
-.navbar a:hover {
-    color: #ffd700;
-    transform: translateY(-1px);
-}
-.navbar > a::after {
-    content: '';
-    position: absolute;
-
-    width: 0;
-    height: 2px;
-
-    bottom: -6px;
-    left: 0;
-
-    background-color: #ffd700;
-
-    transition: width 0.3s ease;
-}
-
-.navbar > a:hover::after {
-    width: 100%;
+    .navbar a {
+        font-size: 10px;
+    }
 }
 .dropdown {
     position: relative;
@@ -344,11 +418,6 @@ font-size: 45px;
 
 @media (max-width: 600px) {
 
-    .navbar {
-        gap: 15px;
-        overflow: visible !important;
-    }
-
 
     .dropdown {
         position: relative;
@@ -439,26 +508,13 @@ font-size: 45px;
 
         transform: translateX(5px);
     }
-.logo img {
-        max-height: 70px;
-        padding: 5px 8px;
-    }
 
-    .logo {
-        margin-right: 15px;
-    }
 }
 
 
 @media (max-width: 400px) {
 
-    .navbar {
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 13px;
-    }
+ 
 
     .dropdown-link {
         font-size: 13px;
@@ -959,7 +1015,6 @@ font-size: 18px !important;
   <div class="hero-text">
     <h1>Digital Products</h1>
     <p>Reliable products for work, study, and everyday performance.</p>
-    <a href="#buy">Buy Now</a>
   </div>
   <img src="https://static.vecteezy.com/system/resources/thumbnails/072/731/384/small/blue-haze-minimalist-website-interface-mockup-displayed-on-a-sleek-laptop-with-a-modern-design-showcasing-a-clean-aesthetic-and-vibrant-digital-elements-with-copy-space-photo.jpg" class="hero-img">
 </div>
@@ -969,6 +1024,54 @@ font-size: 18px !important;
 </section>
 
 <div class="products">
+  <div class="product-card">
+      <div class="product-img">
+        <img src="https://i.pinimg.com/736x/45/97/d8/4597d87905dbd6d24e1929a96918e1e8.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/8b/e1/89/8be1893b1a3ea7b4dcbb28c93eb393cb.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">The Samsung Galaxy A57 5G features a premium 6.9 mm slim aluminum build with a vibrant 6.7-inch 120Hz Super AMOLED Plus display. It is powered by a 4nm Exynos 1680 processor, equipped with an advanced 50MP OIS triple camera, and backed by a 5,000 mAh battery with 45W fast charging.
+        </h3> <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"></span>
+      </div>
+    </div>
+
+     <div class="product-card">
+      <div class="product-img">
+        <img src="https://i.pinimg.com/736x/42/e2/3d/42e23dd65a51b4c77dbc6eeb01363a5c.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/736x/3e/0b/e5/3e0be5a30142d729e6afda960dcbf443.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">The iPhone 18 Pro Max features a cutting-edge 2nm A20 Pro chip alongside a massive 6.9-inch ProMotion display that introduces a significantly narrowed Dynamic Island. Its standout upgrades include an advanced 48MP triple-lens system with a variable mechanical aperture </h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"> </span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://i.pinimg.com/736x/82/cd/6b/82cd6b423241dc0cdbf5520cad4e02c5.jpg" class="img1" alt="Laptop">
+        <img src="https://i.pinimg.com/1200x/55/c6/fd/55c6fdd5fdb8be401f88c6669f52a37d.jpg" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">The Apple MacBook Neo in Blush features an exceptionally efficient A18 chip housed in an ultra-portable 13-inch fanless chassis with a matte, pale pink finish. It is tailored for everyday tasks with up to 18 hours of battery life, dual USB-C ports, and an incredibly accessible entry-level price point</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"></span>
+      </div>
+    </div>
+
+    
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://i.pinimg.com/736x/fd/b3/3b/fdb33bbae7849c65f49a3390955c331b.jpg" class="img1" alt="Laptop">
+        <img src="https://images.samsung.com/pk/smartphones/galaxy-s25-ultra/buy/product_color_black_PC.png" class="img2" alt="Laptop">
+      </div>
+      <h3 class="product-title">The Samsung Galaxy S25 Ultra features a premium titanium frame build integrated with a built-in S Pen stylus and a stunning 6.9-inch QHD+ Dynamic AMOLED 2X display. It is driven by the flagship 3nm Snapdragon 8 Elite Mobile Platform, equipped with a massive 200MP quad-camera setup</h3>
+      <div class="rating">★★★★★</div>
+      <div class="price">
+        <span class="new-price"></span>
+      </div>
+    </div>
+
  <div class="product-card">
       <div class="product-img">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9IigiIvMZooVxmkMy4znV_HBTtuUbLLSIjVP3onPhSA&s=10" class="img1" alt="Laptop">
@@ -982,7 +1085,7 @@ font-size: 18px !important;
     </div>
 <div class="product-card">
       <div class="product-img">
-        <img src="https://scontent.flyp9-1.fna.fbcdn.net/v/t39.30808-6/717154711_1347361714162844_1090856417759403655_n.jpg?stp=dst-jpg_tt6&cstp=mx1440x1440&ctp=s206x206&_nc_cat=105&ccb=1-7&_nc_sid=50ad20&_nc_ohc=jmV4FnrpEl0Q7kNvwG9IFMB&_nc_oc=AdpMafhCrrB4mmfb3qshkgBdSxt_q4GOExJBLSQxMA_fvI_UpQ2O_9OCFLk6FmEWUTI&_nc_zt=23&_nc_ht=scontent.flyp9-1.fna&_nc_gid=W7DWM0FLI0L9fs86q4KAFg&_nc_ss=7b2a8&oh=00_AQJi4ZNHj5qNIn4nFC00C1DEsCaLrEMxRa7w6FZV9DUQVA&oe=6A9C9418" class="img1" alt="Laptop">
+        <img src="https://www.apple.com/newsroom/images/product/ipad/standard/Apple-iPad-10th-gen-hero-221018_Full-Bleed-Image.jpg.large.jpg" class="img1" alt="Laptop">
         <img src="https://images.ctfassets.net/mmeshd7gafk1/3k1Xkqh8mEegBmvSCQNMFe/8de36c27e5a2dee9db5347b4f92fbea0/ipad_10_all_colors_blue_silver_highlighted-media_block-silver_pink_yellow_or_blue_the_best_ipad_10th_gen_color_for_your_styl.jpg" class="img2" alt="Laptop">
       </div>
       <h3 class="product-title">The Apple iPad (10th Gen) has a 10.9" Liquid Retina display, A14 Bionic chip, and USB-C. It supports 12MP cameras, Wi-Fi 6, 5G, Apple Pencil, and Magic Keyboard Folio.</h3>
